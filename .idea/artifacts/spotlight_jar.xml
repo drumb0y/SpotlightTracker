@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="spotlight:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/spotlight_jar</output-path>
+    <root id="archive" name="spotlight_jar.jar">
+      <element id="module-output" name="spotlight" />
+      <element id="extracted-dir" path="$USER_HOME$/Downloads/opencv/build/java/opencv-3412.jar" path-in-jar="/" />
+      <element id="library" level="project" name="opencv-3412" />
+    </root>
+  </artifact>
+</component>

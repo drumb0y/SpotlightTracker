@@ -1,0 +1,373 @@
+import notNeeded.Collector;
+import notNeeded.Id;
+import org.opencv.core.Core;
+import org.opencv.core.Mat;
+import org.opencv.imgcodecs.Imgcodecs;
+
+import javax.swing.*;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
+import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.awt.image.DataBufferByte;
+
+
+
+public class Display implements Id, ChangeListener{
+
+
+    int numbers;
+    int id;
+
+    static ThresholdingSlider greenTollerence;
+    static ThresholdingSlider blueTollerence;
+    static ThresholdingSlider redTollerence;
+
+
+    Image greenImage = Mat2BufferedImage(Imgcodecs.imread("C:\\Users\\s612902\\eclipse-workspace\\spotlight\\Media\\unnamed.jpg"));
+    Image blueImage = Mat2BufferedImage(Imgcodecs.imread("C:\\Users\\s612902\\eclipse-workspace\\spotlight\\Media\\Capture.PNG"));
+    Image redImage = Mat2BufferedImage(Imgcodecs.imread("C:\\Users\\s612902\\eclipse-workspace\\spotlight\\Media\\unnamed (2).jpg"));
+    Image originalImage = Mat2BufferedImage(Imgcodecs.imread("C:\\Users\\s612902\\eclipse-workspace\\spotlight\\Media\\unnamed (1).jpg"));
+
+    //points for each panel
+    JLabel greenPoint;
+    JLabel redPoint;
+    JLabel bluePoint;
+
+
+
+
+    //jframe stuffs
+    JFrame frame = new JFrame("please work");
+    JPanel greenImagePanel = new JPanel() {
+        @Override
+        public void paintComponent(Graphics g) {
+            super.paintComponent(g);
+
+            greenImagePanel.setBackground(Color.RED);
+
+            g.setColor(Color.BLACK);
+            g.fillRect(0, 0, greenImagePanel.getWidth(), greenImagePanel.getHeight());
+            g.drawImage(greenImage, 0, 0, greenImage.getWidth(this), greenImage.getHeight(this), this);
+
+        }
+
+        @Override
+        public Dimension getPreferredSize() {
+            return new Dimension(greenImage.getWidth(this), greenImage.getHeight(this));
+        }
+    };
+    JPanel blueImagePanel = new JPanel() {
+        @Override
+        public void paintComponent(Graphics g) {
+            super.paintComponent(g);
+
+            blueImagePanel.setBackground(Color.RED);
+
+            g.setColor(Color.BLACK);
+            g.fillRect(0, 0, blueImagePanel.getWidth(), blueImagePanel.getHeight());
+            g.drawImage(blueImage, 0, 0, blueImage.getWidth(this), blueImage.getHeight(this), this);
+
+        }
+
+        @Override
+        public Dimension getPreferredSize() {
+            return new Dimension(greenImage.getWidth(this), greenImage.getHeight(this));
+        }
+    };
+    JPanel redImagePanel = new JPanel() {
+        @Override
+        public void paintComponent(Graphics g) {
+            super.paintComponent(g);
+
+            redImagePanel.setBackground(Color.RED);
+
+            g.setColor(Color.BLACK);
+            g.fillRect(0, 0, redImagePanel.getWidth(), redImagePanel.getHeight());
+            g.drawImage(redImage, 0, 0, redImage.getWidth(this), redImage.getHeight(this), this);
+
+        }
+
+        @Override
+        public Dimension getPreferredSize() {
+            return new Dimension(greenImage.getWidth(this), greenImage.getHeight(this));
+        }
+    };
+
+    JPanel originalImagePanel = new JPanel() {
+        @Override
+        public void paintComponent(Graphics g) {
+            super.paintComponent(g);
+
+            g.clearRect(0, 0, originalImage.getWidth(this), originalImage.getHeight(this));
+            g.drawImage(originalImage, 0, 0, originalImage.getWidth(this), originalImage.getHeight(this), this);
+
+        }
+
+        @Override
+        public Dimension getPreferredSize() {
+            return new Dimension(originalImage.getWidth(this), originalImage.getHeight(this));
+        }
+    };
+
+    //JSlider greenTollerence = new JSlider(JSlider.HORIZONTAL, 0,255, greenThresholder.greenThreshold);
+    //ImageIcon icon;
+
+    public Display() {
+        numbers = 0;
+        id = (int) (Math.random()*100000000);
+
+
+        createFrame(greenImage);
+
+    }
+
+    public static void main(String[] args) {
+
+        Collector collector = testing.getCollector();
+
+
+        System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
+
+        JFrame frame=new JFrame();
+        frame.setLayout(new FlowLayout());
+
+        Display m = (Display) collector.getFromMap(Collector.TYPES.DISPLAY);
+
+        //frame
+
+
+        frame.setVisible(true);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        while (true) {
+
+
+
+            //Image img2 = (new Display().Mat2BufferedImage(greenCup));
+
+//            ImageIcon icon=new ImageIcon(img2);
+//            frame.setSize(img2.getWidth(null)+50, img2.getHeight(null)+50);
+//
+//            JLabel lbl=new JLabel(icon);
+//            frame.add(lbl);
+//            frame.setVisible(true);
+
+
+        }
+
+
+    }
+
+    public static BufferedImage Mat2BufferedImage(Mat m) {
+        // Fastest code
+        // output can be assigned either to a BufferedImage or to an Image
+
+        int type = BufferedImage.TYPE_BYTE_GRAY;
+        if ( m.channels() > 1 ) {
+            type = BufferedImage.TYPE_3BYTE_BGR;
+        }
+        int bufferSize = m.channels()*m.cols()*m.rows();
+        byte [] b = new byte[bufferSize];
+        m.get(0,0,b); // get all the pixels
+        BufferedImage image = new BufferedImage(m.cols(),m.rows(), type);
+        final byte[] targetPixels = ((DataBufferByte) image.getRaster().getDataBuffer()).getData();
+        System.arraycopy(b, 0, targetPixels, 0, b.length);
+        return image;
+    }
+
+    public void createFrame(Image img2) {
+//        ImageIcon icon = new ImageIcon(img2);
+//        JLabel lbl = new JLabel(icon);
+
+        frame.setLayout(new GridLayout(2,2));
+        frame.setSize(img2.getWidth(null)+50, img2.getHeight(null)+50);
+
+        greenTollerence.addChangeListener(this);
+        blueTollerence.addChangeListener(this);
+        redTollerence.addChangeListener(this);
+
+        greenPoint = new JLabel();
+        bluePoint = new JLabel();
+        redPoint = new JLabel();
+
+        greenImagePanel.add(greenPoint);
+        blueImagePanel.add(bluePoint);
+        redImagePanel.add(redPoint);
+
+
+
+
+
+
+        //currentImage = img2;
+
+        //frame.add(lbl);
+
+        greenImagePanel.add(greenTollerence);
+        blueImagePanel.add(blueTollerence);
+        redImagePanel.add(redTollerence);
+
+        greenTollerence.setPreferredSize(new Dimension(640, 50));
+        redTollerence.setPreferredSize(new Dimension(640, 50));
+        blueTollerence.setPreferredSize(new Dimension(640, 50));
+
+
+        frame.add(redImagePanel);
+        frame.add(greenImagePanel);
+        frame.add(blueImagePanel);
+        frame.add(originalImagePanel);
+
+        frame.pack();
+        //greenTollerence.setSize(100, 100);
+
+        frame.setVisible(true);
+        frame.setResizable(true);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+    }
+
+    public void displayImage(Image img2) {
+
+        //BufferedImage img=ImageIO.read(new File("/HelloOpenCV/lena.png"));
+        ImageIcon icon=new ImageIcon(img2);
+        JFrame frame=new JFrame();
+        frame.setLayout(new FlowLayout());
+        frame.setSize(img2.getWidth(null)+50, img2.getHeight(null)+50);
+        JLabel lbl=new JLabel();
+        lbl.setIcon(icon);
+        frame.add(lbl);
+        frame.setVisible(true);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    }
+
+    public void updateFrame() {
+
+
+
+
+
+        greenImagePanel.repaint();
+        redImagePanel.repaint();
+        blueImagePanel.repaint();
+
+
+        originalImagePanel.repaint();
+        //System.out.println(greenImagePanel.getSize());
+
+        int width = greenImagePanel.getWidth();
+
+
+
+        //System.out.println(greenImagePanel.getSize() + ",  " +greenImagePanel.getWidth() + ", " + greenTollerence.getSize());
+
+
+        frame.pack();
+
+        //images.clear();
+    }
+
+    public int getId() {
+        return id;
+    }
+
+
+
+    public void addNum(int i) {
+        numbers += i;
+    }
+
+    public static void setGreenTollerence(ThresholdingSlider greenTollerence1) {
+        greenTollerence = greenTollerence1;
+    }
+
+    public static void setBlueTollerence(ThresholdingSlider blueTollerence) {
+        Display.blueTollerence = blueTollerence;
+    }
+
+    public static void setRedTollerence(ThresholdingSlider redTollerence) {
+        Display.redTollerence = redTollerence;
+    }
+
+    private static Display instance = null;
+
+    public static Display getInstance() {
+
+        if (instance == null ) {
+            instance = new Display();
+        }
+
+        return instance;
+    }
+
+    public JFrame getFrame() {
+        return frame;
+    }
+
+    public boolean setGreenImage(Mat mat, AidansPoint p) {
+        if (mat == null) return false;
+
+           greenImage = Mat2BufferedImage(mat);
+
+           if (p != null) {
+               greenPoint.setText("(" + p.x + "," + p.y +")");
+           }
+           return true;
+
+    }
+
+    public boolean setBlueImage(Mat mat, AidansPoint p) {
+        if (mat == null) return false;
+
+        blueImage = Mat2BufferedImage(mat);
+        if (p != null) {
+            bluePoint.setText("(" + p.x + "," + p.y +")");
+        }
+        return true;
+    }
+
+    public boolean setRedImage(Mat mat, AidansPoint p) {
+        if (mat == null) return false;
+
+        redImage = Mat2BufferedImage(mat);
+        if (p != null) {
+            redPoint.setText("(" + p.x + "," + p.y +")");
+        }
+        return true;
+    }
+
+    public boolean setCustomImage(Mat mat) {
+        //todo aaaaaaaaaaaaaaaaaaaa
+        return false;
+    }
+
+
+    public boolean setOriginalImage(Mat mat) {
+        if (mat == null) return false;
+
+        originalImage = Mat2BufferedImage(mat);
+        return true;
+
+    }
+
+
+    @Override
+    public void stateChanged(ChangeEvent e) {
+        ThresholdingSlider source = (ThresholdingSlider) e.getSource();
+
+        if(source.sameColorType(ThresholdingSlider.Colors.GREEN)) {
+            greenTollerence.threshold = source.getValue();
+        }
+
+        if(source.sameColorType(ThresholdingSlider.Colors.BLUE)) {
+            blueTollerence.threshold = source.getValue();
+        }
+
+        if(source.sameColorType(ThresholdingSlider.Colors.RED)) {
+            redTollerence.threshold = source.getValue();
+        }
+
+        //System.out.println("AAAAAAAAAAAAAAAAAAAAAAAAAAAAA         changed state: " + source.getValue());
+
+    }
+}
