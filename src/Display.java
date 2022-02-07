@@ -5,15 +5,16 @@ import org.opencv.core.Mat;
 import org.opencv.imgcodecs.Imgcodecs;
 
 import javax.swing.*;
-import javax.swing.event.ChangeEvent;
+
 import javax.swing.event.ChangeListener;
+import javax.swing.event.ChangeEvent;
+
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.awt.image.DataBufferByte;
 
 
-
-public class Display implements Id, ChangeListener{
+public class Display implements Id, ChangeListener {
 
 
     int numbers;
@@ -24,18 +25,13 @@ public class Display implements Id, ChangeListener{
     static ThresholdingSlider redTollerence;
 
 
-    Image greenImage = Mat2BufferedImage(Imgcodecs.imread("C:\\Users\\s612902\\eclipse-workspace\\spotlight\\Media\\unnamed.jpg"));
-    Image blueImage = Mat2BufferedImage(Imgcodecs.imread("C:\\Users\\s612902\\eclipse-workspace\\spotlight\\Media\\Capture.PNG"));
-    Image redImage = Mat2BufferedImage(Imgcodecs.imread("C:\\Users\\s612902\\eclipse-workspace\\spotlight\\Media\\unnamed (2).jpg"));
-    Image originalImage = Mat2BufferedImage(Imgcodecs.imread("C:\\Users\\s612902\\eclipse-workspace\\spotlight\\Media\\unnamed (1).jpg"));
+    Image greenImage, blueImage, redImage, originalImage;
+
 
     //points for each panel
     JLabel greenPoint;
     JLabel redPoint;
     JLabel bluePoint;
-
-
-
 
     //jframe stuffs
     JFrame frame = new JFrame("please work");
@@ -115,11 +111,20 @@ public class Display implements Id, ChangeListener{
 
     public Display() {
         numbers = 0;
-        id = (int) (Math.random()*100000000);
+        id = (int) (Math.random() * 100000000);
+
+        initImages();
 
 
         createFrame(greenImage);
 
+    }
+
+    public void initImages() {
+        greenImage = Options.greenImage;
+        blueImage = Options.blueImage;
+        redImage = Options.redImage;
+        originalImage = Options.originalImage;
     }
 
     public static void main(String[] args) {
@@ -129,7 +134,7 @@ public class Display implements Id, ChangeListener{
 
         System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
 
-        JFrame frame=new JFrame();
+        JFrame frame = new JFrame();
         frame.setLayout(new FlowLayout());
 
         Display m = (Display) collector.getFromMap(Collector.TYPES.DISPLAY);
@@ -141,7 +146,6 @@ public class Display implements Id, ChangeListener{
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         while (true) {
-
 
 
             //Image img2 = (new Display().Mat2BufferedImage(greenCup));
@@ -159,29 +163,13 @@ public class Display implements Id, ChangeListener{
 
     }
 
-    public static BufferedImage Mat2BufferedImage(Mat m) {
-        // Fastest code
-        // output can be assigned either to a BufferedImage or to an Image
-
-        int type = BufferedImage.TYPE_BYTE_GRAY;
-        if ( m.channels() > 1 ) {
-            type = BufferedImage.TYPE_3BYTE_BGR;
-        }
-        int bufferSize = m.channels()*m.cols()*m.rows();
-        byte [] b = new byte[bufferSize];
-        m.get(0,0,b); // get all the pixels
-        BufferedImage image = new BufferedImage(m.cols(),m.rows(), type);
-        final byte[] targetPixels = ((DataBufferByte) image.getRaster().getDataBuffer()).getData();
-        System.arraycopy(b, 0, targetPixels, 0, b.length);
-        return image;
-    }
 
     public void createFrame(Image img2) {
 //        ImageIcon icon = new ImageIcon(img2);
 //        JLabel lbl = new JLabel(icon);
 
-        frame.setLayout(new GridLayout(2,2));
-        frame.setSize(img2.getWidth(null)+50, img2.getHeight(null)+50);
+        frame.setLayout(new GridLayout(2, 2));
+        frame.setSize(img2.getWidth(null) + 50, img2.getHeight(null) + 50);
 
         greenTollerence.addChangeListener(this);
         blueTollerence.addChangeListener(this);
@@ -194,10 +182,6 @@ public class Display implements Id, ChangeListener{
         greenImagePanel.add(greenPoint);
         blueImagePanel.add(bluePoint);
         redImagePanel.add(redPoint);
-
-
-
-
 
 
         //currentImage = img2;
@@ -230,11 +214,11 @@ public class Display implements Id, ChangeListener{
     public void displayImage(Image img2) {
 
         //BufferedImage img=ImageIO.read(new File("/HelloOpenCV/lena.png"));
-        ImageIcon icon=new ImageIcon(img2);
-        JFrame frame=new JFrame();
+        ImageIcon icon = new ImageIcon(img2);
+        JFrame frame = new JFrame();
         frame.setLayout(new FlowLayout());
-        frame.setSize(img2.getWidth(null)+50, img2.getHeight(null)+50);
-        JLabel lbl=new JLabel();
+        frame.setSize(img2.getWidth(null) + 50, img2.getHeight(null) + 50);
+        JLabel lbl = new JLabel();
         lbl.setIcon(icon);
         frame.add(lbl);
         frame.setVisible(true);
@@ -242,9 +226,6 @@ public class Display implements Id, ChangeListener{
     }
 
     public void updateFrame() {
-
-
-
 
 
         greenImagePanel.repaint();
@@ -258,11 +239,10 @@ public class Display implements Id, ChangeListener{
         int width = greenImagePanel.getWidth();
 
 
-
         //System.out.println(greenImagePanel.getSize() + ",  " +greenImagePanel.getWidth() + ", " + greenTollerence.getSize());
 
 
-        frame.pack();
+        //frame.pack();
 
         //images.clear();
     }
@@ -270,8 +250,6 @@ public class Display implements Id, ChangeListener{
     public int getId() {
         return id;
     }
-
-
 
     public void addNum(int i) {
         numbers += i;
@@ -293,7 +271,7 @@ public class Display implements Id, ChangeListener{
 
     public static Display getInstance() {
 
-        if (instance == null ) {
+        if (instance == null) {
             instance = new Display();
         }
 
@@ -307,21 +285,21 @@ public class Display implements Id, ChangeListener{
     public boolean setGreenImage(Mat mat, AidansPoint p) {
         if (mat == null) return false;
 
-           greenImage = Mat2BufferedImage(mat);
+        greenImage = Options.Mat2BufferedImage(mat);
 
-           if (p != null) {
-               greenPoint.setText("(" + p.x + "," + p.y +")");
-           }
-           return true;
+        if (p != null) {
+            greenPoint.setText("(" + p.x + "," + p.y + ")");
+        }
+        return true;
 
     }
 
     public boolean setBlueImage(Mat mat, AidansPoint p) {
         if (mat == null) return false;
 
-        blueImage = Mat2BufferedImage(mat);
+        blueImage = Options.Mat2BufferedImage(mat);
         if (p != null) {
-            bluePoint.setText("(" + p.x + "," + p.y +")");
+            bluePoint.setText("(" + p.x + "," + p.y + ")");
         }
         return true;
     }
@@ -329,9 +307,9 @@ public class Display implements Id, ChangeListener{
     public boolean setRedImage(Mat mat, AidansPoint p) {
         if (mat == null) return false;
 
-        redImage = Mat2BufferedImage(mat);
+        redImage = Options.Mat2BufferedImage(mat);
         if (p != null) {
-            redPoint.setText("(" + p.x + "," + p.y +")");
+            redPoint.setText("(" + p.x + "," + p.y + ")");
         }
         return true;
     }
@@ -345,25 +323,24 @@ public class Display implements Id, ChangeListener{
     public boolean setOriginalImage(Mat mat) {
         if (mat == null) return false;
 
-        originalImage = Mat2BufferedImage(mat);
+        originalImage = Options.Mat2BufferedImage(mat);
         return true;
 
     }
-
 
     @Override
     public void stateChanged(ChangeEvent e) {
         ThresholdingSlider source = (ThresholdingSlider) e.getSource();
 
-        if(source.sameColorType(ThresholdingSlider.Colors.GREEN)) {
+        if (source.sameColorType(ThresholdingSlider.Colors.GREEN)) {
             greenTollerence.threshold = source.getValue();
         }
 
-        if(source.sameColorType(ThresholdingSlider.Colors.BLUE)) {
+        if (source.sameColorType(ThresholdingSlider.Colors.BLUE)) {
             blueTollerence.threshold = source.getValue();
         }
 
-        if(source.sameColorType(ThresholdingSlider.Colors.RED)) {
+        if (source.sameColorType(ThresholdingSlider.Colors.RED)) {
             redTollerence.threshold = source.getValue();
         }
 

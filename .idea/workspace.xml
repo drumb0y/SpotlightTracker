@@ -6,7 +6,23 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f0ce2048-32c3-4842-8545-ed04f75181c7" name="Changes" comment="" />
+    <list default="true" id="f0ce2048-32c3-4842-8545-ed04f75181c7" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Options.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/OptionsDropDown.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/spotlight/AidansPoint.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/spotlight/AidansPoint.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/spotlight/ColorSelector$IMAGES.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/spotlight/ColorSelector$IMAGES.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/spotlight/ColorSelector.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/spotlight/ColorSelector.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/spotlight/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/spotlight/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/spotlight/ThresholdingSlider$Colors.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/spotlight/ThresholdingSlider$Colors.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/spotlight/ThresholdingSlider.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/spotlight/ThresholdingSlider.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/spotlight/aaaaaa.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/spotlight/aaaaaa.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ColorSelector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ColorSelector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Display.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Display.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ThresholdingSlider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ThresholdingSlider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/testing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/testing.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,11 +31,24 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
   <component name="ProjectId" id="1xXdmGFNfDHHQrLHj3ZlmhEfJMt" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
       <flattenPackages />
@@ -80,11 +109,13 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$USER_HOME$/Downloads" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.language" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -153,5 +184,16 @@
       <updated>1630505525840</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

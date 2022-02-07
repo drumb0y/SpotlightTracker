@@ -39,7 +39,7 @@ public class testing  implements Id {
 
         int swatch = 1;
 
-        m.createFrame(m.Mat2BufferedImage(imageTwo));
+        m.createFrame(Options.Mat2BufferedImage(imageTwo));
 
         while (true) {
             Thread.sleep(500);

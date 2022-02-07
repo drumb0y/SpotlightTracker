@@ -13,6 +13,7 @@ public class ColorSelector implements Id {
     int id;
 
 
+    VideoCapture camera;
 
     Mat onlyGreenimage = new Mat();
     Mat onlyRedimage = new Mat();
@@ -64,16 +65,23 @@ public class ColorSelector implements Id {
         ColorSelector colorSelector = ColorSelector.getInstance();
 
 
-        Display.setGreenTollerence(greenThresholder);
-        Display.setBlueTollerence(blueThresholder);
-        Display.setRedTollerence(redThresholder);
+
+
         colorSelector.scan();
 
     }
 
     private void scan_1() throws InterruptedException {
 
+
+
+        Display.setGreenTollerence(greenThresholder);
+        Display.setBlueTollerence(blueThresholder);
+        Display.setRedTollerence(redThresholder);
+
         Display m = Display.getInstance();
+
+        Options o = Options.getInstance();
 
         //m.createFrame(m.Mat2BufferedImage(Imgcodecs.imread("C:/aidan/1Capture.PNG")));
 
@@ -81,9 +89,9 @@ public class ColorSelector implements Id {
         System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
         String path = "Media/How the Endocrine System Works.mp4";
 
-        //VideoCapture camera = new VideoCapture(path);
+        camera = new VideoCapture(path);
 
-        VideoCapture camera = new VideoCapture(0,Videoio.CAP_DSHOW);
+        //camera = new VideoCapture(0,Videoio.CAP_DSHOW);
 
 
         long count = (long) camera.get(Videoio.CAP_PROP_FRAME_COUNT);
@@ -374,6 +382,9 @@ public class ColorSelector implements Id {
 
     }
 
+    public void setCamera(VideoCapture camera) {
+        this.camera = camera;
+    }
 
     private void scan() throws InterruptedException {
 
