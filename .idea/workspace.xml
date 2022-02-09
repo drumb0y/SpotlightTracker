@@ -6,23 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f0ce2048-32c3-4842-8545-ed04f75181c7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Options.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/OptionsDropDown.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/spotlight/AidansPoint.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/spotlight/AidansPoint.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/spotlight/ColorSelector$IMAGES.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/spotlight/ColorSelector$IMAGES.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/spotlight/ColorSelector.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/spotlight/ColorSelector.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/spotlight/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/spotlight/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/spotlight/ThresholdingSlider$Colors.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/spotlight/ThresholdingSlider$Colors.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/spotlight/ThresholdingSlider.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/spotlight/ThresholdingSlider.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/spotlight/aaaaaa.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/spotlight/aaaaaa.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ColorSelector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ColorSelector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Display.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Display.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ThresholdingSlider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ThresholdingSlider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/testing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/testing.java" afterDir="false" />
-    </list>
+    <list default="true" id="f0ce2048-32c3-4842-8545-ed04f75181c7" name="Changes" comment="end of day (2/9/22)&#10;&#10;added a camera/source selector" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -195,5 +179,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>
