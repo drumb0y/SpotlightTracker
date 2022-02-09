@@ -137,28 +137,11 @@ public class Display implements Id, ChangeListener {
         JFrame frame = new JFrame();
         frame.setLayout(new FlowLayout());
 
-        Display m = (Display) collector.getFromMap(Collector.TYPES.DISPLAY);
-
         //frame
 
 
         frame.setVisible(true);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-        while (true) {
-
-
-            //Image img2 = (new Display().Mat2BufferedImage(greenCup));
-
-//            ImageIcon icon=new ImageIcon(img2);
-//            frame.setSize(img2.getWidth(null)+50, img2.getHeight(null)+50);
-//
-//            JLabel lbl=new JLabel(icon);
-//            frame.add(lbl);
-//            frame.setVisible(true);
-
-
-        }
 
 
     }

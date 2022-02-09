@@ -9,7 +9,7 @@ public class OptionsDropDown extends JComboBox<VideoCapture> {
     public OptionsDropDown(VideoCapture[] cameras) {
         super(cameras);
 
-        setSelectedIndex(1);
+        setSelectedIndex(0);
         addActionListener(this);
     }
 
@@ -18,6 +18,7 @@ public class OptionsDropDown extends JComboBox<VideoCapture> {
         JComboBox feed = (JComboBox)e.getSource();
 
         ColorSelector.getInstance().setCamera((VideoCapture) feed.getSelectedItem());
+        //ColorSelector.getInstance().startVideo();
 
 
     }

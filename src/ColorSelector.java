@@ -13,6 +13,8 @@ public class ColorSelector implements Id {
     int id;
 
 
+    Display m;
+
     VideoCapture camera;
 
     Mat onlyGreenimage = new Mat();
@@ -67,7 +69,7 @@ public class ColorSelector implements Id {
 
 
 
-        colorSelector.scan();
+        colorSelector.scan_1();
 
     }
 
@@ -79,7 +81,7 @@ public class ColorSelector implements Id {
         Display.setBlueTollerence(blueThresholder);
         Display.setRedTollerence(redThresholder);
 
-        Display m = Display.getInstance();
+        m = Display.getInstance();
 
         Options o = Options.getInstance();
 
@@ -93,9 +95,14 @@ public class ColorSelector implements Id {
 
         //camera = new VideoCapture(0,Videoio.CAP_DSHOW);
 
+        startVideo();
+
+    }
+
+
+    public void startVideo() {
 
         long count = (long) camera.get(Videoio.CAP_PROP_FRAME_COUNT);
-
         while (camera.read(originalImage)) {
             //Thread.sleep((long) (((double) 1/6)*100));
             //m.setGreenImage((new Mat(originalImage.rows(),originalImage.cols(), CvType.CV_8UC3, new Scalar(0,0,0))));
@@ -139,7 +146,6 @@ public class ColorSelector implements Id {
         }
 
         System.out.println("this is the end count: " + count);
-
     }
 
     private Mat scan_red(Mat coloredImage, Mat subtractingImage) {
@@ -386,6 +392,7 @@ public class ColorSelector implements Id {
         this.camera = camera;
     }
 
+    /*
     private void scan() throws InterruptedException {
 
         scan_1();
@@ -481,8 +488,8 @@ public class ColorSelector implements Id {
             Imgproc.drawContours(zeroGreen, greenContours, greenMaxIndex, Scalar.all(255), 8, Imgproc.LINE_8, greenHierarchy);
             Imgproc.fillPoly(zeroGreen,greenContours,Scalar.all(255),Imgproc.LINE_4);
             Imgproc.fillPoly(negativeGreenSpace, greenContours, Scalar.all(0),Imgproc.LINE_4);
-            
-            
+
+
             //Mat maskedGreen = new Mat();
 
             originalImage.copyTo(onlyGreenimage, zeroGreen);
@@ -525,8 +532,9 @@ public class ColorSelector implements Id {
 
         System.out.println("this is the end count: " + count);
 
-    }
 
+    }
+*/
     public Mat getOnlyGreenimage() {
         return onlyGreenimage;
     }
