@@ -73,7 +73,7 @@ public class ColorSelector implements Id {
 
     }
 
-    private void scan_1() throws InterruptedException {
+    void scan_1() throws InterruptedException {
 
 
 
