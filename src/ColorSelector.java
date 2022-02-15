@@ -152,12 +152,15 @@ public class ColorSelector implements Id {
         ///red STUFF
 
 
+        //subtract all the green pixels to make the red pixels easier to find
         Mat greenSubtractedRed = new Mat();
         Core.subtract(coloredImage, subtractingImage, greenSubtractedRed);
 
+        //set the red pixels that have less than the threshold value to "0" and above to "1"
         Mat thresh = new Mat();
         Imgproc.threshold(greenSubtractedRed, thresh, redThresholder.threshold, 255, Imgproc.THRESH_BINARY);
 
+        //create a list of all the clumps of pixels, calling them contours
         List<MatOfPoint> contours = new ArrayList<>();
         Mat hierarchy = new Mat();
 
@@ -166,7 +169,7 @@ public class ColorSelector implements Id {
         double MaxSize = 0; //size of largest pixels
         int MaxIndex = 0; //where is the group of largest pixels
 
-        for (int i = 0; i < contours.size(); i++) { //got througth each group of pixels and find the largest one (probely the cup/wanted object)
+        for (int i = 0; i < contours.size(); i++) { //got througth each group of pixels and find the largest one (probably the wanted object)
             if (Imgproc.contourArea(contours.get(i)) > MaxSize) {
                 MaxSize = Imgproc.contourArea(contours.get(i));
                 MaxIndex = i;
@@ -174,10 +177,12 @@ public class ColorSelector implements Id {
             }
         }
 
+        //set the original image's pixels to 0
         Mat zeroColor = Mat.zeros(originalImage.rows(), originalImage.cols(), CvType.CV_8UC1);
         Mat negativeColorSpace = Mat.ones(originalImage.rows(), originalImage.cols(), CvType.CV_8UC1);
 
 
+        //where the largest contour is, make those pixels at their normal value
         Imgproc.drawContours(zeroColor, contours, MaxIndex, Scalar.all(255), 8, Imgproc.LINE_8, hierarchy);
         Imgproc.fillPoly(zeroColor,contours,Scalar.all(255),Imgproc.LINE_4);
         Imgproc.fillPoly(negativeColorSpace, contours, Scalar.all(0),Imgproc.LINE_4);
@@ -207,6 +212,8 @@ public class ColorSelector implements Id {
 
 
         mainContour = new MatOfPoint2f();
+
+        //draw a rectangle over the largest contour
         if(contours.size() > 0) {
 
             Point[] biggestContour = contours.get(MaxIndex).toArray();

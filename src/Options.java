@@ -20,6 +20,8 @@ public class Options {
     public static Image redImage = Mat2BufferedImage(Imgcodecs.imread(redPath));
     public static Image originalImage = Mat2BufferedImage(Imgcodecs.imread(originalPath));
 
+
+
     String path = "Media/How the Endocrine System Works.mp4";
 
     VideoCapture[] cameras = {(new VideoCapture(path)),(new VideoCapture(0, Videoio.CAP_DSHOW))};
@@ -28,22 +30,21 @@ public class Options {
 
     //JFRAME stuff
     JFrame frame;
-    OptionsDropDown dropdownBox;
-
-
+    OptionsDropDown cameraDropdownBox;
 
 
     public Options() {
         frame = new JFrame("hello");
-        dropdownBox = new OptionsDropDown(cameras);
 
+        cameraDropdownBox = new OptionsDropDown(cameras);
+        frame.add(cameraDropdownBox);
 
         createFrame();
     }
 
     public void createFrame() {
 
-        frame.add(dropdownBox);
+
 //        ImageIcon icon = new ImageIcon(img2);
 //        JLabel lbl = new JLabel(icon);
 
@@ -101,3 +102,12 @@ public class Options {
         return image;
     }
 }
+
+//todo label screens
+//change name of app
+//put names for cameras (make it customizable)
+
+/** put images, different dropboxes, etc on opetions frame
+  */
+
+

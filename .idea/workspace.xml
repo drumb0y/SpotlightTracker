@@ -6,9 +6,12 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f0ce2048-32c3-4842-8545-ed04f75181c7" name="Changes" comment="end of day (2/9/22)&#10;&#10;added a camera/source selector">
+    <list default="true" id="f0ce2048-32c3-4842-8545-ed04f75181c7" name="Changes" comment="end of day (2/11/22)&#10;&#10;makes sure that the program does not crash when a camera is not plugged in/missing">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/spotlight/ColorSelector.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/spotlight/ColorSelector.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/spotlight/OptionsDropDown.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/spotlight/OptionsDropDown.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ColorSelector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ColorSelector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Options.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Options.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/OptionsDropDown.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/OptionsDropDown.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -26,7 +29,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitSEFilterConfiguration">
     <file-type-list>
@@ -172,6 +174,14 @@
       <option name="presentableId" value="Default" />
       <updated>1630505525840</updated>
     </task>
+    <task id="LOCAL-00001" summary="end of day (2/11/22)&#10;&#10;makes sure that the program does not crash when a camera is not plugged in/missing">
+      <created>1644596777089</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1644596777089</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -185,5 +195,9 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="end of day (2/11/22)&#10;&#10;makes sure that the program does not crash when a camera is not plugged in/missing" />
+    <option name="LAST_COMMIT_MESSAGE" value="end of day (2/11/22)&#10;&#10;makes sure that the program does not crash when a camera is not plugged in/missing" />
   </component>
 </project>
