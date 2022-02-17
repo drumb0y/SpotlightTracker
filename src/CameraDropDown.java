@@ -1,13 +1,12 @@
-import notNeeded.Id;
 import org.opencv.core.Mat;
 import org.opencv.videoio.VideoCapture;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 
-public class OptionsDropDown extends JComboBox<VideoCapture> {
+public class CameraDropDown extends JComboBox<VideoCapture> {
 
-    public OptionsDropDown(VideoCapture[] cameras) {
+    public CameraDropDown(VideoCapture[] cameras) {
         super(cameras);
 
         setSelectedIndex(0);

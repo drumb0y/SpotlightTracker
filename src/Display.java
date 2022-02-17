@@ -34,7 +34,7 @@ public class Display implements Id, ChangeListener {
     JLabel bluePoint;
 
     //jframe stuffs
-    JFrame frame = new JFrame("please work");
+    JFrame frame = new JFrame(Options.nameOfApp);
     JPanel greenImagePanel = new JPanel() {
         @Override
         public void paintComponent(Graphics g) {

@@ -23,9 +23,9 @@ public class ColorSelector implements Id {
 
     AidansPoint redPoint, bluePoint, greenPoint;
 
-    static ThresholdingSlider greenThresholder = new ThresholdingSlider(ThresholdingSlider.Colors.GREEN);
-    static ThresholdingSlider blueThresholder = new ThresholdingSlider(ThresholdingSlider.Colors.BLUE);
-    static ThresholdingSlider redThresholder = new ThresholdingSlider(ThresholdingSlider.Colors.RED);
+    public static ThresholdingSlider greenThresholder = new ThresholdingSlider(ThresholdingSlider.Colors.GREEN);
+    public static ThresholdingSlider blueThresholder = new ThresholdingSlider(ThresholdingSlider.Colors.BLUE);
+    public static ThresholdingSlider redThresholder = new ThresholdingSlider(ThresholdingSlider.Colors.RED);
 
    // ColorSelector colorSelector = (ColorSelector) notNeeded.Collector.getInstance().getFromMap(notNeeded.Collector.TYPES.COLORSELECTOR);
 
