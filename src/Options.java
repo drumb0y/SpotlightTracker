@@ -38,33 +38,45 @@ public class Options implements ChangeListener {
 
     //JFRAME stuff
     JFrame frame;
+
+    JPanel colorSliders;
+    JPanel dropdowns;
     CameraDropDown cameraDropdownBox;
+
+    int rowsForLayout = 3;
 
 
     public Options() {
         frame = new JFrame("hello");
+        colorSliders = new JPanel();
+        dropdowns = new JPanel();
 
-        frame.setLayout(new GridLayout(10,1,20,20));
+        frame.setLayout(new GridLayout(rowsForLayout,1,20,20));
+        colorSliders.setLayout(new GridLayout(4,4,10,10));
+        dropdowns.setLayout(new GridLayout(1,2,10,10));
+
+
+
         cameraDropdownBox = new CameraDropDown(cameras);
 
-        frame.add(cameraDropdownBox);
 
 
         greenThresholder.addChangeListener(this);
-
-
         blueThresholder.addChangeListener(this);
-
-
         redThresholder.addChangeListener(this);
 
-        frame.add(new JLabel("green"));
-        frame.add(greenThresholder);
-        frame.add(new JLabel("blue"));
-        frame.add(blueThresholder);
-        frame.add(new JLabel("red"));
-        frame.add(redThresholder);
+        colorSliders.add(new JLabel("green"));
+        colorSliders.add(greenThresholder);
+        colorSliders.add(new JLabel("blue"));
+        colorSliders.add(blueThresholder);
+        colorSliders.add(new JLabel("red"));
+        colorSliders.add(redThresholder);
 
+        dropdowns.add(cameraDropdownBox);
+
+
+        frame.add(dropdowns);
+        frame.add(colorSliders);
         createFrame();
     }
 
