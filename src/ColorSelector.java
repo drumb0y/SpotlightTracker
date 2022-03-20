@@ -43,7 +43,7 @@ public class ColorSelector implements Id {
         ORIGINAL
     }
 
-
+// initialize needed values
     public ColorSelector() {
        // main(null);
 
@@ -56,7 +56,7 @@ public class ColorSelector implements Id {
 
     }
 
-
+//starts and runs whole program
     public static void main(String[] args) throws InterruptedException {
         System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
 
@@ -73,6 +73,7 @@ public class ColorSelector implements Id {
 
     }
 
+//setup each tolerance slider, the path to the default video, and associated camera
     void scan_1() throws InterruptedException {
 
 
@@ -82,8 +83,6 @@ public class ColorSelector implements Id {
         Display.setRedTollerence(redThresholder);
 
         m = Display.getInstance();
-
-        Options o = Options.getInstance();
 
         //m.createFrame(m.Mat2BufferedImage(Imgcodecs.imread("C:/aidan/1Capture.PNG")));
 
@@ -99,7 +98,7 @@ public class ColorSelector implements Id {
 
     }
 
-
+//start the video and take each frame of it, sperate it into it RGB Components, and call the respective functions;
     public void startVideo() {
 
         long count = (long) camera.get(Videoio.CAP_PROP_FRAME_COUNT);
@@ -148,6 +147,7 @@ public class ColorSelector implements Id {
         System.out.println("this is the end count: " + count);
     }
 
+//take the red components of the video frame and find the largest collection of pixels, according to the tolerance, and draw a contour over it.
     private Mat scan_red(Mat coloredImage, Mat subtractingImage) {
         ///red STUFF
 
@@ -231,6 +231,7 @@ public class ColorSelector implements Id {
         return onlyRedimage;
     }
 
+//take the blue components of the video frame and find the largest collection of pixels, according to the tolerance, and draw a contour over it.
     private Mat scan_blue(Mat coloredImage, Mat subtractingImage) {
         ///Blue STUFF
 
@@ -306,6 +307,7 @@ public class ColorSelector implements Id {
 
     }
 
+//take the red components of the video frame and find the largest collection of pixels, according to the tolerance, and draw a contour over it.
     private Mat scan_green(Mat coloredImage, Mat subtractingImage) {
         ///GREEN STUFF
 

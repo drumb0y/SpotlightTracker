@@ -39,21 +39,24 @@ public class Options implements ChangeListener {
     //JFRAME stuff
     JFrame frame;
 
+    JPanel mainPanel;
+
     JPanel colorSliders;
     JPanel dropdowns;
     CameraDropDown cameraDropdownBox;
 
-    int rowsForLayout = 3;
+    int rowsForLayout = 2;
 
 
     public Options() {
         frame = new JFrame("hello");
         colorSliders = new JPanel();
         dropdowns = new JPanel();
+        mainPanel = new JPanel();
 
-        frame.setLayout(new GridLayout(rowsForLayout,1,20,20));
-        colorSliders.setLayout(new GridLayout(4,4,10,10));
-        dropdowns.setLayout(new GridLayout(1,2,10,10));
+        mainPanel.setLayout(new GridLayout(rowsForLayout,2,20,20));
+        colorSliders.setLayout(new GridLayout(6,1,10,10));
+        dropdowns.setLayout(new GridLayout(2,1,10,10));
 
 
 
@@ -73,10 +76,19 @@ public class Options implements ChangeListener {
         colorSliders.add(redThresholder);
 
         dropdowns.add(cameraDropdownBox);
+        //dropdowns.add(new CameraDropDown(cameras));
 
 
-        frame.add(dropdowns);
-        frame.add(colorSliders);
+        mainPanel.add(dropdowns);
+        mainPanel.add(colorSliders);
+
+        frame.add(mainPanel);
+
+
+        if (false) {
+            Display.getInstance().addPanelToTab(mainPanel);
+        }
+
         createFrame();
     }
 

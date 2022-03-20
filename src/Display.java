@@ -90,6 +90,10 @@ public class Display implements Id, ChangeListener {
         }
     };
 
+    JPanel imagePanels = new JPanel();
+
+    JTabbedPane tabbedPane = new JTabbedPane();
+
     JPanel originalImagePanel = new JPanel() {
         @Override
         public void paintComponent(Graphics g) {
@@ -151,7 +155,7 @@ public class Display implements Id, ChangeListener {
 //        ImageIcon icon = new ImageIcon(img2);
 //        JLabel lbl = new JLabel(icon);
 
-        frame.setLayout(new GridLayout(2, 2));
+        //frame.setLayout(new GridLayout(2, 2));
         frame.setSize(img2.getWidth(null) + 50, img2.getHeight(null) + 50);
 
         greenTollerence.addChangeListener(this);
@@ -167,10 +171,6 @@ public class Display implements Id, ChangeListener {
         redImagePanel.add(redPoint);
 
 
-        //currentImage = img2;
-
-        //frame.add(lbl);
-
         greenImagePanel.add(greenTollerence);
         blueImagePanel.add(blueTollerence);
         redImagePanel.add(redTollerence);
@@ -180,10 +180,17 @@ public class Display implements Id, ChangeListener {
         blueTollerence.setPreferredSize(new Dimension(640, 50));
 
 
-        frame.add(redImagePanel);
-        frame.add(greenImagePanel);
-        frame.add(blueImagePanel);
-        frame.add(originalImagePanel);
+        imagePanels.setLayout(new GridLayout(2,2));
+        imagePanels.setName("video streams");
+
+        imagePanels.add(redImagePanel);
+        imagePanels.add(greenImagePanel);
+        imagePanels.add(blueImagePanel);
+        imagePanels.add(originalImagePanel);
+
+        tabbedPane.add(imagePanels);
+
+        frame.add(tabbedPane);
 
         frame.pack();
         //greenTollerence.setSize(100, 100);
@@ -309,6 +316,10 @@ public class Display implements Id, ChangeListener {
         originalImage = Options.Mat2BufferedImage(mat);
         return true;
 
+    }
+
+    public void addPanelToTab(JPanel p) {
+        tabbedPane.add(p);
     }
 
     @Override
