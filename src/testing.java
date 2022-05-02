@@ -16,7 +16,7 @@ public class testing  implements Id {
     }
 
     public static void main(String[] args) throws InterruptedException {
-        System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
+        //System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
 
         Collector collector = Collector.getInstance();
         Display m;

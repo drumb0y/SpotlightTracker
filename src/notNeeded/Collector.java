@@ -39,7 +39,7 @@ public class Collector implements Id {
 
         id = (int) (Math.random()*100000000);
 
-        System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
+        //System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
     }
 
     public void create() {

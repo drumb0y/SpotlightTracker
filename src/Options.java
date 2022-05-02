@@ -12,10 +12,10 @@ import java.awt.image.DataBufferByte;
 
 public class Options implements ChangeListener {
 
-    static String greenPath = "C:\\Users\\s612902\\eclipse-workspace\\spotlight\\Media\\unnamed.jpg";
-    static String bluePath = "C:\\Users\\s612902\\eclipse-workspace\\spotlight\\Media\\Capture.PNG";
-    static String redPath = "C:\\Users\\s612902\\eclipse-workspace\\spotlight\\Media\\unnamed (2).jpg";
-    static String originalPath = "C:\\Users\\s612902\\eclipse-workspace\\spotlight\\Media\\unnamed (1).jpg";
+    static String greenPath = "Media/unnamed.jpg";
+    static String bluePath = "Media/Capture.PNG";
+    static String redPath = "Media/unnamed (2).jpg";
+    static String originalPath = "Media/unnamed (1).jpg";
 
     static String nameOfApp = "Spotlight Tracking thing";
 

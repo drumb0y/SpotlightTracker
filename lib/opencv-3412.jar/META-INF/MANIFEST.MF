@@ -1,9 +1,0 @@
-Manifest-Version: 1.0
-Ant-Version: Apache Ant 1.9.7
-Created-By: 1.8.0_112-b15 (Oracle Corporation)
-Specification-Title: OpenCV
-Specification-Version: 3.4.12
-Implementation-Title: OpenCV
-Implementation-Version: 3.4.12
-Implementation-Date: Sat Oct 10 2020 19:07:44 PDT
-

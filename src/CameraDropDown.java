@@ -29,5 +29,4 @@ public class CameraDropDown extends JComboBox<VideoCapture> {
         ColorSelector.getInstance().setCamera(cam);
 
         }
-//        createUIComponents
 }
