@@ -34,6 +34,8 @@ public class ColorSelector implements Id {
 //    private Mat greenImage = new Mat();
 //    private Mat redImage = new Mat();
 
+    OptionsTab optionsTab = new OptionsTab();
+
     boolean copyOver = true;
 
     public enum IMAGES {
@@ -91,6 +93,7 @@ public class ColorSelector implements Id {
         String path = "Media/How the Endocrine System Works.mp4";
 
         camera = new VideoCapture(path);
+        Options options = new Options();
 
         //camera = new VideoCapture(0,Videoio.CAP_DSHOW);
 
@@ -226,6 +229,8 @@ public class ColorSelector implements Id {
         }
 
         redPoint = new AidansPoint(center.x,center.y);
+        optionsTab.pointToLabel(OptionsTab.Color.RED, redPoint);
+
 
 
         return onlyRedimage;
@@ -302,6 +307,8 @@ public class ColorSelector implements Id {
         }
 
         bluePoint = new AidansPoint(center.x,center.y);
+        optionsTab.pointToLabel(OptionsTab.Color.BLUE, bluePoint);
+
 
         return onlyBlueimage;
 
@@ -381,6 +388,7 @@ public class ColorSelector implements Id {
         }
 
         greenPoint = new AidansPoint(center.x,center.y);
+        optionsTab.pointToLabel(OptionsTab.Color.GREEN, greenPoint);
 
 
         return onlyGreenimage;

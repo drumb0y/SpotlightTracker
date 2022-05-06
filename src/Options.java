@@ -30,9 +30,9 @@ public class Options implements ChangeListener {
 
 
 
-    String path = "Media/How the Endocrine System Works.mp4";
+    public static String path = "Media/How the Endocrine System Works.mp4";
 
-    VideoCapture[] cameras = {(new VideoCapture(path)),(new VideoCapture(0, Videoio.CAP_DSHOW))};
+    public static VideoCapture[] cameras = {(new VideoCapture(path)),(new VideoCapture(0, Videoio.CAP_DSHOW))};
 
     //camera = new VideoCapture(0,Videoio.CAP_DSHOW);
 
@@ -46,6 +46,10 @@ public class Options implements ChangeListener {
     CameraDropDown cameraDropdownBox;
 
     int rowsForLayout = 2;
+
+    public static void main(String[] args) {
+
+    }
 
 
     public Options() {
@@ -81,8 +85,10 @@ public class Options implements ChangeListener {
 
         mainPanel.add(dropdowns);
         mainPanel.add(colorSliders);
+        System.out.println("1");
 
         frame.add(mainPanel);
+        //frame.add(OptionsTab.getInstance().getRootPane());
 
 
         if (false) {

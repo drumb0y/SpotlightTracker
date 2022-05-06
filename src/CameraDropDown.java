@@ -1,10 +1,19 @@
 import org.opencv.core.Mat;
 import org.opencv.videoio.VideoCapture;
+import org.opencv.videoio.Videoio;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 
 public class CameraDropDown extends JComboBox<VideoCapture> {
+
+    String path = "Media/How the Endocrine System Works.mp4";
+    VideoCapture[] cameras = {(new VideoCapture(path)),(new VideoCapture(0, Videoio.CAP_DSHOW))};
+
+    public CameraDropDown() {
+        super(Options.cameras);
+
+    }
 
     public CameraDropDown(VideoCapture[] cameras) {
         super(cameras);

@@ -10,276 +10,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f0ce2048-32c3-4842-8545-ed04f75181c7" name="Changes" comment="end of day (3/19/22)&#10;&#10;added comments and a better UI">
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/spotlight_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/spotlight_jar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/opencv_3412.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/opencv_3412.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/openpnp_opencv.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/META-INF/MANIFEST.MF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/opencv-3412.jar.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/calib3d/Calib3d.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/calib3d/Calib3d.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/calib3d/StereoBM.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/calib3d/StereoBM.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/calib3d/StereoMatcher.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/calib3d/StereoMatcher.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/calib3d/StereoSGBM.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/calib3d/StereoSGBM.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/core/Algorithm.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/core/Algorithm.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/core/Core.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/core/Core.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/core/CvException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/core/CvException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/core/CvType.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/core/CvType.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/core/DMatch.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/core/DMatch.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/core/KeyPoint.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/core/KeyPoint.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/core/Mat.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/core/Mat.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/core/MatOfByte.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/core/MatOfByte.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/core/MatOfDMatch.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/core/MatOfDMatch.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/core/MatOfDouble.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/core/MatOfDouble.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/core/MatOfFloat.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/core/MatOfFloat.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/core/MatOfFloat4.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/core/MatOfFloat4.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/core/MatOfFloat6.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/core/MatOfFloat6.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/core/MatOfInt.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/core/MatOfInt.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/core/MatOfInt4.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/core/MatOfInt4.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/core/MatOfKeyPoint.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/core/MatOfKeyPoint.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/core/MatOfPoint.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/core/MatOfPoint.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/core/MatOfPoint2f.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/core/MatOfPoint2f.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/core/MatOfPoint3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/core/MatOfPoint3.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/core/MatOfPoint3f.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/core/MatOfPoint3f.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/core/MatOfRect.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/core/MatOfRect.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/core/MatOfRect2d.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/core/MatOfRect2d.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/core/MatOfRotatedRect.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/core/MatOfRotatedRect.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/core/Point.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/core/Point.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/core/Point3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/core/Point3.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/core/Range.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/core/Range.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/core/Rect.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/core/Rect.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/core/Rect2d.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/core/Rect2d.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/core/RotatedRect.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/core/RotatedRect.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/core/Scalar.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/core/Scalar.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/core/Size.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/core/Size.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/core/TermCriteria.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/core/TermCriteria.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/core/TickMeter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/core/TickMeter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/dnn/DictValue.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/dnn/DictValue.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/dnn/Dnn.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/dnn/Dnn.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/dnn/Layer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/dnn/Layer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/dnn/Net.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/dnn/Net.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/features2d/AKAZE.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/features2d/AKAZE.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/features2d/AffineFeature.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/features2d/AffineFeature.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/features2d/AgastFeatureDetector.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/features2d/AgastFeatureDetector.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/features2d/BFMatcher.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/features2d/BFMatcher.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/features2d/BOWImgDescriptorExtractor.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/features2d/BOWImgDescriptorExtractor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/features2d/BOWKMeansTrainer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/features2d/BOWKMeansTrainer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/features2d/BOWTrainer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/features2d/BOWTrainer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/features2d/BRISK.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/features2d/BRISK.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/features2d/DescriptorExtractor.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/features2d/DescriptorExtractor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/features2d/DescriptorMatcher.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/features2d/DescriptorMatcher.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/features2d/FastFeatureDetector.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/features2d/FastFeatureDetector.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/features2d/Feature2D.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/features2d/Feature2D.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/features2d/FeatureDetector.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/features2d/FeatureDetector.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/features2d/Features2d.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/features2d/Features2d.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/features2d/FlannBasedMatcher.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/features2d/FlannBasedMatcher.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/features2d/GFTTDetector.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/features2d/GFTTDetector.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/features2d/KAZE.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/features2d/KAZE.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/features2d/MSER.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/features2d/MSER.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/features2d/ORB.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/features2d/ORB.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/features2d/Params.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/features2d/Params.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/features2d/SIFT.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/features2d/SIFT.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/features2d/SimpleBlobDetector.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/features2d/SimpleBlobDetector.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/highgui/HighGui.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/highgui/HighGui.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/highgui/ImageWindow.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/highgui/ImageWindow.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/imgcodecs/Imgcodecs.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/imgcodecs/Imgcodecs.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/imgproc/CLAHE.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/imgproc/CLAHE.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/imgproc/GeneralizedHough.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/imgproc/GeneralizedHough.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/imgproc/GeneralizedHoughBallard.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/imgproc/GeneralizedHoughBallard.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/imgproc/GeneralizedHoughGuil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/imgproc/GeneralizedHoughGuil.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/imgproc/Imgproc.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/imgproc/Imgproc.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/imgproc/LineSegmentDetector.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/imgproc/LineSegmentDetector.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/imgproc/Moments.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/imgproc/Moments.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/imgproc/Subdiv2D.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/imgproc/Subdiv2D.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/ml/ANN_MLP.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/ml/ANN_MLP.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/ml/ANN_MLP_ANNEAL.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/ml/ANN_MLP_ANNEAL.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/ml/Boost.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/ml/Boost.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/ml/DTrees.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/ml/DTrees.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/ml/EM.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/ml/EM.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/ml/KNearest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/ml/KNearest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/ml/LogisticRegression.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/ml/LogisticRegression.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/ml/Ml.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/ml/Ml.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/ml/NormalBayesClassifier.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/ml/NormalBayesClassifier.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/ml/ParamGrid.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/ml/ParamGrid.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/ml/RTrees.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/ml/RTrees.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/ml/SVM.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/ml/SVM.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/ml/SVMSGD.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/ml/SVMSGD.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/ml/StatModel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/ml/StatModel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/ml/TrainData.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/ml/TrainData.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/objdetect/BaseCascadeClassifier.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/objdetect/BaseCascadeClassifier.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/objdetect/CascadeClassifier.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/objdetect/CascadeClassifier.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/objdetect/HOGDescriptor.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/objdetect/HOGDescriptor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/objdetect/Objdetect.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/objdetect/Objdetect.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/objdetect/QRCodeDetector.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/objdetect/QRCodeDetector.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/osgi/OpenCVInterface.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/osgi/OpenCVInterface.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/osgi/OpenCVNativeLoader.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/osgi/OpenCVNativeLoader.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/photo/AlignExposures.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/photo/AlignExposures.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/photo/AlignMTB.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/photo/AlignMTB.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/photo/CalibrateCRF.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/photo/CalibrateCRF.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/photo/CalibrateDebevec.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/photo/CalibrateDebevec.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/photo/CalibrateRobertson.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/photo/CalibrateRobertson.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/photo/MergeDebevec.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/photo/MergeDebevec.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/photo/MergeExposures.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/photo/MergeExposures.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/photo/MergeMertens.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/photo/MergeMertens.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/photo/MergeRobertson.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/photo/MergeRobertson.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/photo/Photo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/photo/Photo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/photo/Tonemap.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/photo/Tonemap.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/photo/TonemapDrago.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/photo/TonemapDrago.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/photo/TonemapMantiuk.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/photo/TonemapMantiuk.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/photo/TonemapReinhard.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/photo/TonemapReinhard.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/utils/Converters.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/utils/Converters.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/video/BackgroundSubtractor.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/video/BackgroundSubtractor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/video/BackgroundSubtractorKNN.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/video/BackgroundSubtractorKNN.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/video/BackgroundSubtractorMOG2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/video/BackgroundSubtractorMOG2.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/video/DenseOpticalFlow.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/video/DenseOpticalFlow.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/video/DualTVL1OpticalFlow.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/video/DualTVL1OpticalFlow.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/video/FarnebackOpticalFlow.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/video/FarnebackOpticalFlow.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/video/KalmanFilter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/video/KalmanFilter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/video/SparseOpticalFlow.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/video/SparseOpticalFlow.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/video/SparsePyrLKOpticalFlow.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/video/SparsePyrLKOpticalFlow.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/video/Video.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/video/Video.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/videoio/VideoCapture.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/videoio/VideoCapture.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/videoio/VideoWriter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/videoio/VideoWriter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/videoio/Videoio.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/org/opencv/videoio/Videoio.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/out/production/opencv-3412.jar/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/out/production/opencv-3412.jar/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/out/production/opencv-3412.jar/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/out/production/opencv-3412.jar/META-INF/MANIFEST.MF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencv-3412.jar/out/production/opencv-3412.jar/opencv-3412.jar.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/spotlight.iml" beforeDir="false" afterPath="$PROJECT_DIR$/spotlight.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CameraDropDown.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CameraDropDown.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ColorSelector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ColorSelector.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Options.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Options.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/OptionsTab.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/OptionsTab.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/OptionsTab.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/OptionsTab.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/notNeeded/Collector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/notNeeded/Collector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/testing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/testing.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/thiss.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thiss.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -385,7 +121,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "5",
+    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "559",
     "last_opened_file_path": "C:/Users/s612902.RRISD/Downloads/SpotlightTracker-withLibraryInProject/SpotlightTracker-withLibraryInProject/lib/opencv/build/java/x64/opencv_java3412.dll",
     "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.15",
@@ -448,10 +184,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main (1)" />
+        <item itemvalue="Application.Display" />
         <item itemvalue="Application.testing" />
         <item itemvalue="Application.ColorSelector" />
         <item itemvalue="Application.aaaaaa" />
-        <item itemvalue="Application.Display" />
       </list>
     </recent_temporary>
   </component>
