@@ -4,6 +4,8 @@ import org.opencv.videoio.Videoio;
 import javax.swing.*;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
+import javax.swing.text.html.HTMLDocument;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -38,10 +40,39 @@ public class OptionsTab {
 
     public OptionsTab() {
 
-        GreenThresholder.addChangeListener(new sliderMoved(Color.GREEN));
+
+        setupThresholders();
 
 
         setupFrame();
+    }
+
+    private void setupThresholders() {
+        GreenThresholder.addChangeListener(new sliderMoved(Color.GREEN));
+        GreenThresholder.setMajorTickSpacing(10);
+        GreenThresholder.setMinorTickSpacing(1);
+        GreenThresholder.setPaintTicks(true);
+        GreenThresholder.setPaintLabels(true);
+        GreenThresholder.setFont(new Font("Serif", Font.ITALIC, 12));
+        GreenThresholder.setMaximum(255);
+
+        RedThresholder.addChangeListener(new sliderMoved(Color.RED));
+        RedThresholder.setMajorTickSpacing(10);
+        RedThresholder.setMinorTickSpacing(1);
+        RedThresholder.setPaintTicks(true);
+        RedThresholder.setPaintLabels(true);
+        RedThresholder.setFont(new Font("Serif", Font.ITALIC, 12));
+        RedThresholder.setMaximum(255);
+
+
+        BlueThresholder.addChangeListener(new sliderMoved(Color.BLUE));
+        BlueThresholder.setMajorTickSpacing(10);
+        BlueThresholder.setMinorTickSpacing(1);
+        BlueThresholder.setPaintTicks(true);
+        BlueThresholder.setPaintLabels(true);
+        BlueThresholder.setFont(new Font("Serif", Font.ITALIC, 12));
+        BlueThresholder.setMaximum(255);
+
     }
 
     //action listeners
@@ -60,13 +91,13 @@ public class OptionsTab {
 
             switch(color) {
                     case RED:
-                        Options.redThresholder.threshold = source.getValue();
+                        Options.redThresholder.threshold = (int) (source.getValue() * 2.55);
                         break;
                     case BLUE:
-                        Options.blueThresholder.threshold = source.getValue();
+                        Options.blueThresholder.threshold = (int) (source.getValue() * 2.55);
                         break;
                     case GREEN:
-                        Options.greenThresholder.threshold = source.getValue();
+                        Options.greenThresholder.threshold = (int) (source.getValue() * 2.55);
                         break;
                 }
         }
