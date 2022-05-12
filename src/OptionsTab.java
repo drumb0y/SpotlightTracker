@@ -4,7 +4,6 @@ import org.opencv.videoio.Videoio;
 import javax.swing.*;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
-import javax.swing.text.html.HTMLDocument;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -42,6 +41,7 @@ public class OptionsTab {
 
 
         setupThresholders();
+        setupCheckboxes();
 
 
         setupFrame();
@@ -75,6 +75,13 @@ public class OptionsTab {
 
     }
 
+    private void setupCheckboxes() {
+        showBlueStreamCheckBox.addActionListener(new checkboxToggled(Color.BLUE));
+        showGreenStreamCheckBox.addActionListener(new checkboxToggled(Color.GREEN));
+        showRedStreamCheckBox.addActionListener(new checkboxToggled(Color.RED));
+        showUnfilterdVideoStreamCheckBox.addActionListener(new checkboxToggled(Color.NONE));
+    }
+
     //action listeners
 
     private class sliderMoved implements ChangeListener {
@@ -103,6 +110,21 @@ public class OptionsTab {
         }
     }
 
+    private class checkboxToggled implements ActionListener {
+        Color color;
+
+        public checkboxToggled(Color c) {
+            this.color = c;
+        }
+
+        @Override
+        public void actionPerformed(ActionEvent actionEvent) {
+            System.out.println(color);
+                Display.getInstance().toggleStream(color);
+
+        }
+    }
+
     private void setupFrame() {
         JFrame frame = new JFrame("Calculator");
         frame.setContentPane(RootPane);
@@ -112,7 +134,7 @@ public class OptionsTab {
     }
 
     public enum Color {
-        RED, GREEN, BLUE
+        RED, GREEN, BLUE, NONE
     }
     private JLabel CordinateRed;
     private JLabel CordinateGreen;

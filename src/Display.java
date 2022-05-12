@@ -2,7 +2,6 @@ import notNeeded.Collector;
 import notNeeded.Id;
 import org.opencv.core.Core;
 import org.opencv.core.Mat;
-import org.opencv.imgcodecs.Imgcodecs;
 
 import javax.swing.*;
 
@@ -10,8 +9,6 @@ import javax.swing.event.ChangeListener;
 import javax.swing.event.ChangeEvent;
 
 import java.awt.*;
-import java.awt.image.BufferedImage;
-import java.awt.image.DataBufferByte;
 
 
 public class Display implements Id, ChangeListener {
@@ -215,15 +212,39 @@ public class Display implements Id, ChangeListener {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 
+    boolean greenStreamVisible = true;
+    boolean redStreamVisible = true;
+    boolean blueStreamVisible = true;
+    boolean noneStreamVisible = true;
+
+    public void toggleStream(OptionsTab.Color c) {
+        switch (c) {
+            case RED:
+                redStreamVisible = !redStreamVisible;
+                break;
+            case GREEN:
+                greenStreamVisible = !greenStreamVisible;
+                break;
+            case BLUE:
+                blueStreamVisible = !blueStreamVisible;
+                break;
+            case NONE:
+                noneStreamVisible = !noneStreamVisible;
+                break;
+
+        }
+
+    }
+
     public void updateFrame() {
 
 
-        greenImagePanel.repaint();
-        redImagePanel.repaint();
-        blueImagePanel.repaint();
+        if (greenStreamVisible) greenImagePanel.repaint();
+        if (redStreamVisible) redImagePanel.repaint();
+        if (blueStreamVisible) blueImagePanel.repaint();
 
 
-        originalImagePanel.repaint();
+        if (noneStreamVisible) originalImagePanel.repaint();
         //System.out.println(greenImagePanel.getSize());
 
         int width = greenImagePanel.getWidth();

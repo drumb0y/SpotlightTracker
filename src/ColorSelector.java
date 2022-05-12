@@ -101,7 +101,7 @@ public class ColorSelector implements Id {
 
     }
 
-//start the video and take each frame of it, sperate it into it RGB Components, and call the respective functions;
+//start the video and take each frame of it, separate it into it RGB Components, and call the respective functions;
     public void startVideo() {
 
         long count = (long) camera.get(Videoio.CAP_PROP_FRAME_COUNT);

@@ -10,7 +10,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f0ce2048-32c3-4842-8545-ed04f75181c7" name="Changes" comment="end of day (5/6/22)&#10;&#10;ADDED A BETTER UI AND IT WORKS NOW">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/illposed_osc_javaosc_core.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/OSCControler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spotlight.iml" beforeDir="false" afterPath="$PROJECT_DIR$/spotlight.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ColorSelector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ColorSelector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Display.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Display.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/OptionsTab.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/OptionsTab.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/OptionsTab.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/OptionsTab.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -108,23 +115,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH&quot;: &quot;559&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/s612902.RRISD/Downloads/SpotlightTracker-withLibraryInProject/SpotlightTracker-withLibraryInProject/lib/opencv/build/java/x64/opencv_java3412.dll&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Downloaded.Files.Path.Enabled": "true",
+    "Repository.Attach.Annotations": "true",
+    "Repository.Attach.JavaDocs": "true",
+    "Repository.Attach.Sources": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "559",
+    "last_opened_file_path": "C:/Users/s612902.RRISD/Downloads/SpotlightTracker-withLibraryInProject/SpotlightTracker-withLibraryInProject/lib/opencv/build/java/x64/opencv_java3412.dll",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\s612902.RRISD\Downloads\SpotlightTracker-withLibraryInProject\SpotlightTracker-withLibraryInProject" />
@@ -133,6 +140,7 @@
       <recent name="C:\Users\s612902\eclipse-workspace\spotlight\src" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\s612902.RRISD\Downloads\SpotlightTracker-withLibraryInProject\SpotlightTracker-withLibraryInProject\lib\javaosc" />
       <recent name="C:\Users\s612902.RRISD\Downloads\SpotlightTracker-withLibraryInProject\SpotlightTracker-withLibraryInProject\lib" />
       <recent name="C:\Users\15126\IdeaProjects\SpotlightTracker\src" />
       <recent name="C:\Users\s612902\eclipse-workspace\spotlight\Media" />
