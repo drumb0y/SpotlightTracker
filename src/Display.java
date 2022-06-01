@@ -32,6 +32,8 @@ public class Display implements Id, ChangeListener {
 
     //jframe stuffs
     JFrame frame = new JFrame(Options.nameOfApp);
+    int scale = 1;
+
     JPanel greenImagePanel = new JPanel() {
         @Override
         public void paintComponent(Graphics g) {
@@ -40,9 +42,20 @@ public class Display implements Id, ChangeListener {
             greenImagePanel.setBackground(Color.RED);
 
             g.setColor(Color.BLACK);
-            g.fillRect(0, 0, greenImagePanel.getWidth(), greenImagePanel.getHeight());
-            g.drawImage(greenImage, 0, 0, greenImage.getWidth(this), greenImage.getHeight(this), this);
 
+            if(scale == 1) {
+                g.fillRect(0, 0, greenImagePanel.getWidth()/scale, greenImagePanel.getHeight()/scale);
+                g.drawImage(greenImage, 0, 0, greenImage.getWidth(this), greenImage.getHeight(this), this);
+
+            }
+            else {
+
+                Image tempImage = greenImage.getScaledInstance(greenImage.getWidth(this) / scale, greenImage.getHeight(this) / scale, Image.SCALE_FAST);
+
+                g.fillRect(0, 0, greenImagePanel.getWidth() / scale, greenImagePanel.getHeight() / scale);
+                g.drawImage(tempImage, 0, 0, tempImage.getWidth(this), tempImage.getHeight(this), this);
+
+            }
         }
 
         @Override
@@ -58,8 +71,18 @@ public class Display implements Id, ChangeListener {
             blueImagePanel.setBackground(Color.RED);
 
             g.setColor(Color.BLACK);
-            g.fillRect(0, 0, blueImagePanel.getWidth(), blueImagePanel.getHeight());
-            g.drawImage(blueImage, 0, 0, blueImage.getWidth(this), blueImage.getHeight(this), this);
+
+            if(scale == 1) {
+                g.fillRect(0, 0, blueImagePanel.getWidth(), blueImagePanel.getHeight());
+                g.drawImage(blueImage, 0, 0, blueImage.getWidth(this), blueImage.getHeight(this), this);
+            }
+            else {
+                Image tempImage = blueImage.getScaledInstance(blueImage.getWidth(this) / scale, blueImage.getHeight(this) / scale, Image.SCALE_FAST);
+
+                g.fillRect(0, 0, blueImagePanel.getWidth(), blueImagePanel.getHeight());
+                g.drawImage(tempImage, 0, 0, tempImage.getWidth(this), tempImage.getHeight(this), this);
+
+            }
 
         }
 
@@ -76,8 +99,17 @@ public class Display implements Id, ChangeListener {
             redImagePanel.setBackground(Color.RED);
 
             g.setColor(Color.BLACK);
-            g.fillRect(0, 0, redImagePanel.getWidth(), redImagePanel.getHeight());
-            g.drawImage(redImage, 0, 0, redImage.getWidth(this), redImage.getHeight(this), this);
+
+            if (scale == 1) {
+                g.fillRect(0, 0, redImagePanel.getWidth(), redImagePanel.getHeight());
+                g.drawImage(redImage, 0, 0, redImage.getWidth(this), redImage.getHeight(this), this);
+            }
+            else{
+                Image tempImage = redImage.getScaledInstance(redImage.getWidth(this) / scale, redImage.getHeight(this) / scale, Image.SCALE_FAST);
+
+                g.fillRect(0, 0, redImagePanel.getWidth(), redImagePanel.getHeight());
+                g.drawImage(tempImage, 0, 0, tempImage.getWidth(this), tempImage.getHeight(this), this);
+            }
 
         }
 
@@ -96,9 +128,17 @@ public class Display implements Id, ChangeListener {
         public void paintComponent(Graphics g) {
             super.paintComponent(g);
 
-            g.clearRect(0, 0, originalImage.getWidth(this), originalImage.getHeight(this));
-            g.drawImage(originalImage, 0, 0, originalImage.getWidth(this), originalImage.getHeight(this), this);
+            if(scale == 1) {
+                g.clearRect(0, 0, originalImage.getWidth(this), originalImage.getHeight(this));
+                g.drawImage(originalImage, 0, 0, originalImage.getWidth(this), originalImage.getHeight(this), this);
+            }
+            else{
+                Image tempImage = originalImage.getScaledInstance(originalImage.getWidth(this) / scale, originalImage.getHeight(this) / scale, Image.SCALE_FAST);
 
+                g.clearRect(0, 0, originalImage.getWidth(this), originalImage.getHeight(this));
+                g.drawImage(tempImage, 0, 0, tempImage.getWidth(this), tempImage.getHeight(this), this);
+
+            }
         }
 
         @Override
@@ -168,9 +208,9 @@ public class Display implements Id, ChangeListener {
         redImagePanel.add(redPoint);
 
 
-        greenImagePanel.add(greenTollerence);
-        blueImagePanel.add(blueTollerence);
-        redImagePanel.add(redTollerence);
+       // greenImagePanel.add(greenTollerence);
+       // blueImagePanel.add(blueTollerence);
+       // redImagePanel.add(redTollerence);
 
         greenTollerence.setPreferredSize(new Dimension(640, 50));
         redTollerence.setPreferredSize(new Dimension(640, 50));

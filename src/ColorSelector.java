@@ -93,7 +93,7 @@ public class ColorSelector implements Id {
         String path = "Media/How the Endocrine System Works.mp4";
 
         camera = new VideoCapture(path);
-        Options options = new Options();
+        //Options options = new Options();
 
         //camera = new VideoCapture(0,Videoio.CAP_DSHOW);
 

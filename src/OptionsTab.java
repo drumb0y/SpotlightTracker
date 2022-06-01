@@ -1,3 +1,5 @@
+import customOpencvObjects.CustomVideoCapture;
+import org.opencv.core.Mat;
 import org.opencv.videoio.VideoCapture;
 import org.opencv.videoio.Videoio;
 
@@ -31,7 +33,7 @@ public class OptionsTab {
     private JTextField textField1;
     private JTextField textField2;
     private JTextField textField3;
-    private CameraDropDown cameraDropDown1;
+    private JComboBox cameraDropDown;
     private JTextField textField4;
     private JTextField textField5;
     private JTextField textField6;
@@ -42,9 +44,29 @@ public class OptionsTab {
 
         setupThresholders();
         setupCheckboxes();
-
+        setupSpinner();
+        setupDropdown();
 
         setupFrame();
+    }
+
+    private void setupSpinner() {
+        Scale.setValue(1);
+    }
+
+    private void setupDropdown() {
+        String path = "Media/How the Endocrine System Works.mp4";
+        CustomVideoCapture[] cameras = {
+                (new CustomVideoCapture("How the Endocrine System Works", path)),
+                (new CustomVideoCapture("Front Camera",0, Videoio.CAP_DSHOW)),
+                (new CustomVideoCapture("ColorTest", "Media/colorTest.mp4" ))};
+
+        cameraDropDown.addItem(cameras[0]);
+        cameraDropDown.addItem(cameras[1]);
+        cameraDropDown.addItem(cameras[2]);
+
+        cameraDropDown.setSelectedIndex(0);
+        cameraDropDown.addActionListener(new dropboxDropped());
     }
 
     private void setupThresholders() {
@@ -98,13 +120,13 @@ public class OptionsTab {
 
             switch(color) {
                     case RED:
-                        Options.redThresholder.threshold = (int) (source.getValue() * 2.55);
+                        Options.redThresholder.threshold = (int) (source.getValue());
                         break;
                     case BLUE:
-                        Options.blueThresholder.threshold = (int) (source.getValue() * 2.55);
+                        Options.blueThresholder.threshold = (int) (source.getValue());
                         break;
                     case GREEN:
-                        Options.greenThresholder.threshold = (int) (source.getValue() * 2.55);
+                        Options.greenThresholder.threshold = (int) (source.getValue());
                         break;
                 }
         }
@@ -121,6 +143,25 @@ public class OptionsTab {
         public void actionPerformed(ActionEvent actionEvent) {
             System.out.println(color);
                 Display.getInstance().toggleStream(color);
+
+        }
+    }
+
+    private class dropboxDropped implements ActionListener {
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            JComboBox feed = (JComboBox) e.getSource();
+            VideoCapture cam = (VideoCapture) feed.getSelectedItem();
+            Mat testImage = new Mat();
+            cam.read(testImage);
+
+            /** makes sure that the program does not crash when a camera is not plugged in **/
+            if (feed == null || cam == null || testImage.cols() < 1) {
+                System.out.println("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+                return;
+            }
+            ColorSelector.getInstance().setCamera(cam);
 
         }
     }
@@ -163,6 +204,8 @@ public class OptionsTab {
 
     }
     private JTextField eosCue2FireTextField;
+    private JSpinner Scale;
+
 
 
     private void createUIComponents() {
@@ -170,7 +213,7 @@ public class OptionsTab {
         String path = "Media/How the Endocrine System Works.mp4";
 
         VideoCapture[] cameras = {(new VideoCapture(path)),(new VideoCapture(0, Videoio.CAP_DSHOW))};
-        cameraDropDown1 = new CameraDropDown(cameras);
+        //cameraDropDown1 = new CameraDropDown(cameras);
 
     }
 

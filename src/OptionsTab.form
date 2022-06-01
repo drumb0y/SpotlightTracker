@@ -85,7 +85,7 @@
                 </constraints>
                 <properties>
                   <foreground color="-16762437"/>
-                  <text value="Show blue Stream"/>
+                  <text value="Pause blue Stream"/>
                 </properties>
               </component>
               <component id="dad70" class="javax.swing.JCheckBox" binding="showGreenStreamCheckBox" default-binding="true">
@@ -94,7 +94,7 @@
                 </constraints>
                 <properties>
                   <foreground color="-15811840"/>
-                  <text value="Show green Stream"/>
+                  <text value="Pause green Stream"/>
                 </properties>
               </component>
               <component id="4aaad" class="javax.swing.JCheckBox" binding="showRedStreamCheckBox" default-binding="true">
@@ -103,7 +103,7 @@
                 </constraints>
                 <properties>
                   <foreground color="-4521979"/>
-                  <text value="Show red Stream"/>
+                  <text value="Pause red Stream"/>
                 </properties>
               </component>
               <component id="d9015" class="javax.swing.JCheckBox" binding="showUnfilterdVideoStreamCheckBox" default-binding="true">
@@ -114,11 +114,6 @@
                   <selected value="false"/>
                   <text value="Show unfilterd video Stream"/>
                 </properties>
-              </component>
-              <component id="7f29d" class="CameraDropDown" binding="cameraDropDown1" default-binding="true">
-                <constraints>
-                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
-                </constraints>
               </component>
               <component id="c6731" class="javax.swing.JLabel" binding="CordinateRed">
                 <constraints>
@@ -151,6 +146,18 @@
                 <properties>
                   <text value="(x,y) Position per stream"/>
                 </properties>
+              </component>
+              <component id="df8c3" class="javax.swing.JSpinner" binding="Scale">
+                <constraints>
+                  <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties/>
+              </component>
+              <component id="4d284" class="javax.swing.JComboBox" binding="cameraDropDown">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties/>
               </component>
             </children>
           </grid>
