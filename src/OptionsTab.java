@@ -9,6 +9,8 @@ import javax.swing.event.ChangeListener;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 
 public class OptionsTab {
 
@@ -44,10 +46,11 @@ public class OptionsTab {
 
         setupThresholders();
         setupCheckboxes();
-        setupSpinner();
+        //setupSpinner();
         setupDropdown();
 
         setupFrame();
+
     }
 
     private void setupSpinner() {
@@ -66,7 +69,12 @@ public class OptionsTab {
         cameraDropDown.addItem(cameras[2]);
 
         cameraDropDown.setSelectedIndex(0);
-        cameraDropDown.addActionListener(new dropboxDropped());
+        cameraDropDown.addActionListener(new cameraDropboxDropped());
+
+        possibleResolutionOptions.addActionListener(new resolution());
+
+
+
     }
 
     private void setupThresholders() {
@@ -147,7 +155,7 @@ public class OptionsTab {
         }
     }
 
-    private class dropboxDropped implements ActionListener {
+    private class cameraDropboxDropped implements ActionListener {
 
         @Override
         public void actionPerformed(ActionEvent e) {
@@ -164,6 +172,64 @@ public class OptionsTab {
             ColorSelector.getInstance().setCamera(cam);
 
         }
+    }
+
+    private JComboBox possibleResolutionOptions;
+
+    private class resolution implements ActionListener {
+        ArrayList<String> storedRes = new ArrayList<>();
+
+        public resolution() {
+            storedRes.add("1920 x 1080");
+            storedRes.add("1280 x 720");
+            storedRes.add("640 x 480");
+        }
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            JComboBox box = (JComboBox) e.getSource();
+
+            String activeResolution = (String) box.getSelectedItem();
+
+            System.out.println(box.getSelectedItem());
+
+            if (!storedRes.contains(activeResolution)) {
+                storedRes.add(activeResolution);
+                box.addItem(activeResolution);
+            }
+
+            changeResolution(activeResolution);
+        }
+
+        public boolean changeResolution(String res) {
+            System.out.println(res);
+            String[] temp = res.split(" ");
+           // System.out.println(temp.toString());
+           // System.out.println(temp[0] +" " + temp[1] + " " + temp[2]);
+
+            if (temp.length != 3
+            ||  !temp[1].equalsIgnoreCase("x")) {
+                return false;
+            }
+
+            else {
+
+                int width = Integer.parseInt(temp[0]);
+                int height = Integer.parseInt(temp[2]);
+
+                VideoCapture cam = ColorSelector.getInstance().camera;
+
+
+                cam.set(Videoio.CAP_PROP_FRAME_WIDTH, width);
+                cam.set(Videoio.CAP_PROP_FRAME_HEIGHT, height);
+
+                System.out.printf("%d, %d, %f, %f \n", width, height, cam.get(Videoio.CAP_PROP_FRAME_WIDTH), cam.get(Videoio.CAP_PROP_FRAME_HEIGHT));
+            }
+
+            return false;
+        }
+
+
     }
 
     private void setupFrame() {
@@ -204,6 +270,9 @@ public class OptionsTab {
 
     }
     private JTextField eosCue2FireTextField;
+    private JTextField textField7;
+    private JTextField textField8;
+    private JTextField textField9;
     private JSpinner Scale;
 
 

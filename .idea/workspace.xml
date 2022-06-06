@@ -9,17 +9,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f0ce2048-32c3-4842-8545-ed04f75181c7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Media/colorTest.mp4" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/customOpencvObjects/CustomVideoCapture.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/opencv_3412.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/opencv_3412.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="f0ce2048-32c3-4842-8545-ed04f75181c7" name="Changes" comment="end of day (3/19/22)&#10;&#10;added comments and a better UI">
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ColorSelector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ColorSelector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Display.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Display.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/OptionsTab.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/OptionsTab.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/OptionsTab.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/OptionsTab.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/customOpencvObjects/CustomVideoCapture.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/customOpencvObjects/CustomVideoCapture.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,6 +44,9 @@
       <filtered-out-file-type name="TAG" />
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="1xXdmGFNfDHHQrLHj3ZlmhEfJMt" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -218,7 +216,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <ignored-roots>

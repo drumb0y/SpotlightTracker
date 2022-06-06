@@ -5,6 +5,7 @@ import org.opencv.videoio.VideoCapture;
 public class CustomVideoCapture extends VideoCapture {
     String NAME;
 
+
     public CustomVideoCapture(String name, String fileName) {
         super(fileName);
         NAME = name;
