@@ -1,4 +1,4 @@
-import notNeeded.Id;
+import customOpencvObjects.CustomVideoCapture;
 import org.opencv.core.Mat;
 import org.opencv.videoio.VideoCapture;
 
@@ -17,7 +17,7 @@ public class OptionsDropDown extends JComboBox<VideoCapture> {
     /** Listens to the combo box. */
     public void actionPerformed(ActionEvent e) {
         JComboBox feed = (JComboBox)e.getSource();
-        VideoCapture cam = (VideoCapture) feed.getSelectedItem();
+        CustomVideoCapture cam = (CustomVideoCapture) feed.getSelectedItem();
         Mat testImage = new Mat();
         cam.read(testImage);
 

@@ -15,9 +15,17 @@ public class CustomVideoCapture extends VideoCapture {
         NAME = name;
     }
 
+    Position position;
+    public void setPosition(int newX, int newY,int newZ) {
+        position = new Position(newX, newY, newZ);
+
+    }
+
 
     @Override
     public String toString() {
         return NAME;
     }
+
+
 }

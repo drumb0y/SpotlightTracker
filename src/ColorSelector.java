@@ -73,6 +73,13 @@ public class ColorSelector implements Id {
 
         colorSelector.scan_1();
 
+        //todo instead of just subtracting just one color (bluesubtractedgreen...) subtract both so its pure green, pure blue, pure red
+        //todo maybe that would make it better (Done)
+
+
+
+
+
     }
 
 //setup each tolerance slider, the path to the default video, and associated camera
@@ -117,9 +124,9 @@ public class ColorSelector implements Id {
             Mat redImage = colors.get(2);
             Mat greenImage = colors.get(1);
 
-            m.setGreenImage(scan_green(greenImage, blueImage),greenPoint);
-            m.setBlueImage(scan_blue(blueImage, redImage),bluePoint);
-            m.setRedImage(scan_red(redImage,greenImage),redPoint);
+            m.setGreenImage(scan_green(greenImage, blueImage, redImage),greenPoint);
+            m.setBlueImage(scan_blue(blueImage, redImage, greenImage),bluePoint);
+            m.setRedImage(scan_red(redImage,greenImage, blueImage),redPoint);
             m.setCustomImage(scan_custom());
 
 
@@ -151,13 +158,17 @@ public class ColorSelector implements Id {
     }
 
 //take the red components of the video frame and find the largest collection of pixels, according to the tolerance, and draw a contour over it.
-    private Mat scan_red(Mat coloredImage, Mat subtractingImage) {
+    private Mat scan_red(Mat coloredImage, Mat subtractingImage, Mat subtractingImage2) {
         ///red STUFF
 
 
         //subtract all the green pixels to make the red pixels easier to find
         Mat greenSubtractedRed = new Mat();
         Core.subtract(coloredImage, subtractingImage, greenSubtractedRed);
+
+        Mat allSubtractedRed = new Mat();
+        Core.subtract(greenSubtractedRed, subtractingImage2, allSubtractedRed);
+        greenSubtractedRed = allSubtractedRed;
 
         //set the red pixels that have less than the threshold value to "0" and above to "1"
         Mat thresh = new Mat();
@@ -170,7 +181,7 @@ public class ColorSelector implements Id {
         Imgproc.findContours(thresh, contours, hierarchy, Imgproc.RETR_CCOMP, Imgproc.CHAIN_APPROX_SIMPLE);
 
         double MaxSize = 0; //size of largest pixels
-        int MaxIndex = 0; //where is the group of largest pixels
+        int MaxIndex = 0; //where is the group of the largest pixels
 
         for (int i = 0; i < contours.size(); i++) { //got througth each group of pixels and find the largest one (probably the wanted object)
             if (Imgproc.contourArea(contours.get(i)) > MaxSize) {
@@ -237,12 +248,16 @@ public class ColorSelector implements Id {
     }
 
 //take the blue components of the video frame and find the largest collection of pixels, according to the tolerance, and draw a contour over it.
-    private Mat scan_blue(Mat coloredImage, Mat subtractingImage) {
+    private Mat scan_blue(Mat coloredImage, Mat subtractingImage, Mat subtractingImage2) {
         ///Blue STUFF
 
 
         Mat redSubtractedBlue = new Mat();
         Core.subtract(coloredImage, subtractingImage, redSubtractedBlue);
+
+        Mat allSubtractedBlue = new Mat();
+        Core.subtract(redSubtractedBlue, subtractingImage2, allSubtractedBlue);
+        redSubtractedBlue = allSubtractedBlue;
 
         Mat thresh = new Mat();
         Imgproc.threshold(redSubtractedBlue, thresh, blueThresholder.threshold, 255, Imgproc.THRESH_BINARY);
@@ -253,7 +268,7 @@ public class ColorSelector implements Id {
         Imgproc.findContours(thresh, contours, hierarchy, Imgproc.RETR_CCOMP, Imgproc.CHAIN_APPROX_SIMPLE);
 
         double MaxSize = 0; //size of largest pixels
-        int MaxIndex = 0; //where is the group of largest pixels
+        int MaxIndex = 0; //where is the group of the largest pixels
 
         for (int i = 0; i < contours.size(); i++) { //got througth each group of pixels and find the largest one (probely the cup/wanted object)
             if (Imgproc.contourArea(contours.get(i)) > MaxSize) {
@@ -315,12 +330,16 @@ public class ColorSelector implements Id {
     }
 
 //take the red components of the video frame and find the largest collection of pixels, according to the tolerance, and draw a contour over it.
-    private Mat scan_green(Mat coloredImage, Mat subtractingImage) {
+    private Mat scan_green(Mat coloredImage, Mat subtractingImage, Mat subtractingImage2) {
         ///GREEN STUFF
 
 
         Mat blueSubtractedGreen = new Mat();
         Core.subtract(coloredImage, subtractingImage, blueSubtractedGreen);
+
+        Mat allSubtractedGreen = new Mat();
+        Core.subtract(blueSubtractedGreen, subtractingImage2, allSubtractedGreen);
+        blueSubtractedGreen = allSubtractedGreen;
 
         Mat thresh = new Mat();
         Imgproc.threshold(blueSubtractedGreen, thresh, greenThresholder.threshold, 255, Imgproc.THRESH_BINARY);

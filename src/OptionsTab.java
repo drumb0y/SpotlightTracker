@@ -9,7 +9,6 @@ import javax.swing.event.ChangeListener;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class OptionsTab {
@@ -32,9 +31,9 @@ public class OptionsTab {
     private JPanel CameraPosition;
     private JPanel LightPosition;
     private JPanel OSC;
-    private JTextField textField1;
-    private JTextField textField2;
-    private JTextField textField3;
+    private JTextField CameraPosX;
+    private JTextField CameraPosY;
+    private JTextField CameraPosZ;
     private JComboBox cameraDropDown;
     private JTextField textField4;
     private JTextField textField5;
@@ -61,7 +60,7 @@ public class OptionsTab {
         String path = "Media/How the Endocrine System Works.mp4";
         CustomVideoCapture[] cameras = {
                 (new CustomVideoCapture("How the Endocrine System Works", path)),
-                (new CustomVideoCapture("Front Camera",0, Videoio.CAP_DSHOW)),
+                (new CustomVideoCapture("Front notNeeded.Camera",0, Videoio.CAP_DSHOW)),
                 (new CustomVideoCapture("ColorTest", "Media/colorTest.mp4" ))};
 
         cameraDropDown.addItem(cameras[0]);
@@ -114,6 +113,7 @@ public class OptionsTab {
 
     //action listeners
 
+   // private class
     private class sliderMoved implements ChangeListener {
 
         Color color;
@@ -198,6 +198,7 @@ public class OptionsTab {
                 box.addItem(activeResolution);
             }
 
+
             changeResolution(activeResolution);
         }
 
@@ -207,6 +208,8 @@ public class OptionsTab {
            // System.out.println(temp.toString());
            // System.out.println(temp[0] +" " + temp[1] + " " + temp[2]);
 
+
+
             if (temp.length != 3
             ||  !temp[1].equalsIgnoreCase("x")) {
                 return false;
@@ -214,8 +217,13 @@ public class OptionsTab {
 
             else {
 
+
+
                 int width = Integer.parseInt(temp[0]);
                 int height = Integer.parseInt(temp[2]);
+
+                Mat testImg = new Mat(width,height,Core.);
+
 
                 VideoCapture cam = ColorSelector.getInstance().camera;
 
