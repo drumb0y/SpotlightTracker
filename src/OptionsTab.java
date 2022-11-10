@@ -1,4 +1,5 @@
 import customOpencvObjects.CustomVideoCapture;
+import org.opencv.core.CvType;
 import org.opencv.core.Mat;
 import org.opencv.videoio.VideoCapture;
 import org.opencv.videoio.Videoio;
@@ -45,7 +46,7 @@ public class OptionsTab {
 
         setupThresholders();
         setupCheckboxes();
-        //setupSpinner();
+        setupSpinner();
         setupDropdown();
 
         setupFrame();
@@ -53,7 +54,8 @@ public class OptionsTab {
     }
 
     private void setupSpinner() {
-        Scale.setValue(1);
+        resolutionScalingFactor.setValue(100);
+        resolutionScalingFactor.addChangeListener(new resolutionScalingListener());
     }
 
     private void setupDropdown() {
@@ -160,7 +162,7 @@ public class OptionsTab {
         @Override
         public void actionPerformed(ActionEvent e) {
             JComboBox feed = (JComboBox) e.getSource();
-            VideoCapture cam = (VideoCapture) feed.getSelectedItem();
+            CustomVideoCapture cam = (CustomVideoCapture) feed.getSelectedItem();
             Mat testImage = new Mat();
             cam.read(testImage);
 
@@ -176,6 +178,21 @@ public class OptionsTab {
 
     private JComboBox possibleResolutionOptions;
 
+    private class resolutionScalingListener implements ChangeListener {
+
+        @Override
+        public void stateChanged(ChangeEvent e) {
+            JSpinner source = (JSpinner) e.getSource();
+
+            int factor = (int) source.getValue();
+            int width = (int) ColorSelector.getInstance().getCamera().get(Videoio.CAP_PROP_FRAME_WIDTH);
+            int height = (int) ColorSelector.getInstance().getCamera().get(Videoio.CAP_PROP_FRAME_HEIGHT);
+
+            ColorSelector.getInstance().setSize(width*factor/100,height*factor/100);
+
+
+        }
+    }
     private class resolution implements ActionListener {
         ArrayList<String> storedRes = new ArrayList<>();
 
@@ -217,19 +234,19 @@ public class OptionsTab {
 
             else {
 
-
-
                 int width = Integer.parseInt(temp[0]);
                 int height = Integer.parseInt(temp[2]);
 
-                Mat testImg = new Mat(width,height,Core.);
+                Mat testImg = new Mat(width, height, CvType.CV_8UC1);
 
 
-                VideoCapture cam = ColorSelector.getInstance().camera;
+                CustomVideoCapture cam = (CustomVideoCapture) cameraDropDown.getSelectedItem();
 
+                ColorSelector.getInstance().setSize(width,height);
 
-                cam.set(Videoio.CAP_PROP_FRAME_WIDTH, width);
-                cam.set(Videoio.CAP_PROP_FRAME_HEIGHT, height);
+                cam.read(testImg);
+
+                ColorSelector.getInstance().setCamera(cam);
 
                 System.out.printf("%d, %d, %f, %f \n", width, height, cam.get(Videoio.CAP_PROP_FRAME_WIDTH), cam.get(Videoio.CAP_PROP_FRAME_HEIGHT));
             }
@@ -281,6 +298,7 @@ public class OptionsTab {
     private JTextField textField7;
     private JTextField textField8;
     private JTextField textField9;
+    private JSpinner resolutionScalingFactor;
     private JSpinner Scale;
 
 
@@ -290,7 +308,7 @@ public class OptionsTab {
         String path = "Media/How the Endocrine System Works.mp4";
 
         VideoCapture[] cameras = {(new VideoCapture(path)),(new VideoCapture(0, Videoio.CAP_DSHOW))};
-        //cameraDropDown1 = new CameraDropDown(cameras);
+        //cameraDropDown1 = new notNeeded.CameraDropDown(cameras);
 
     }
 
@@ -303,4 +321,6 @@ public class OptionsTab {
 
         return instance;
     }
+
+    //add mainclasses for lots of classes to do inividual tests of features.
 }

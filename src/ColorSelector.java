@@ -1,3 +1,4 @@
+import customOpencvObjects.CustomVideoCapture;
 import notNeeded.Id;
 import org.opencv.core.*;
 import org.opencv.imgproc.Imgproc;
@@ -15,7 +16,7 @@ public class ColorSelector implements Id {
 
     Display m;
 
-    VideoCapture camera;
+    CustomVideoCapture camera;
 
     Mat onlyGreenimage = new Mat();
     Mat onlyRedimage = new Mat();
@@ -99,7 +100,7 @@ public class ColorSelector implements Id {
         System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
         String path = "Media/How the Endocrine System Works.mp4";
 
-        camera = new VideoCapture(path);
+        camera = new CustomVideoCapture("enddocrine",path);
         //Options options = new Options();
 
         //camera = new VideoCapture(0,Videoio.CAP_DSHOW);
@@ -107,12 +108,40 @@ public class ColorSelector implements Id {
         startVideo();
 
     }
+    int width,height;
+
+    public CustomVideoCapture getCamera() {
+        return camera;
+    }
+
+    public int getCameraWidth() {
+        return width;
+    }
+
+    public int getCameraHeight() {
+        return height;
+    }
+
+    public void setSize(int width1, int height1) {
+
+        if (width1 > camera.get(Videoio.CAP_PROP_FRAME_WIDTH) || height1 > camera.get(Videoio.CAP_PROP_FRAME_HEIGHT) || width1 < 1 || height1 < 1) {
+          return;
+        }
+        width = width1;
+        height = height1;
+    }
 
 //start the video and take each frame of it, separate it into it RGB Components, and call the respective functions;
     public void startVideo() {
 
+
+
         long count = (long) camera.get(Videoio.CAP_PROP_FRAME_COUNT);
+        width = (int) camera.get(Videoio.CAP_PROP_FRAME_WIDTH);
+        height = (int) camera.get(Videoio.CAP_PROP_FRAME_HEIGHT);
+
         while (camera.read(originalImage)) {
+            Imgproc.resize(originalImage, originalImage, new Size(width,height));
             //Thread.sleep((long) (((double) 1/6)*100));
             //m.setGreenImage((new Mat(originalImage.rows(),originalImage.cols(), CvType.CV_8UC3, new Scalar(0,0,0))));
 
@@ -166,9 +195,10 @@ public class ColorSelector implements Id {
         Mat greenSubtractedRed = new Mat();
         Core.subtract(coloredImage, subtractingImage, greenSubtractedRed);
 
-        Mat allSubtractedRed = new Mat();
-        Core.subtract(greenSubtractedRed, subtractingImage2, allSubtractedRed);
-        greenSubtractedRed = allSubtractedRed;
+        //subtracted out blue
+//        Mat allSubtractedRed = new Mat();
+//        Core.subtract(greenSubtractedRed, subtractingImage2, allSubtractedRed);
+//        greenSubtractedRed = allSubtractedRed;
 
         //set the red pixels that have less than the threshold value to "0" and above to "1"
         Mat thresh = new Mat();
@@ -255,9 +285,10 @@ public class ColorSelector implements Id {
         Mat redSubtractedBlue = new Mat();
         Core.subtract(coloredImage, subtractingImage, redSubtractedBlue);
 
-        Mat allSubtractedBlue = new Mat();
-        Core.subtract(redSubtractedBlue, subtractingImage2, allSubtractedBlue);
-        redSubtractedBlue = allSubtractedBlue;
+        //subtracts out the green
+//        Mat allSubtractedBlue = new Mat();
+//        Core.subtract(redSubtractedBlue, subtractingImage2, allSubtractedBlue);
+//        redSubtractedBlue = allSubtractedBlue;
 
         Mat thresh = new Mat();
         Imgproc.threshold(redSubtractedBlue, thresh, blueThresholder.threshold, 255, Imgproc.THRESH_BINARY);
@@ -337,9 +368,11 @@ public class ColorSelector implements Id {
         Mat blueSubtractedGreen = new Mat();
         Core.subtract(coloredImage, subtractingImage, blueSubtractedGreen);
 
-        Mat allSubtractedGreen = new Mat();
-        Core.subtract(blueSubtractedGreen, subtractingImage2, allSubtractedGreen);
-        blueSubtractedGreen = allSubtractedGreen;
+
+//subtract out red
+//        Mat allSubtractedGreen = new Mat();
+//        Core.subtract(blueSubtractedGreen, subtractingImage2, allSubtractedGreen);
+//        blueSubtractedGreen = allSubtractedGreen;
 
         Mat thresh = new Mat();
         Imgproc.threshold(blueSubtractedGreen, thresh, greenThresholder.threshold, 255, Imgproc.THRESH_BINARY);
@@ -424,7 +457,7 @@ public class ColorSelector implements Id {
 
     }
 
-    public void setCamera(VideoCapture camera) {
+    public void setCamera(CustomVideoCapture camera) {
         this.camera = camera;
     }
 

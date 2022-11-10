@@ -1,3 +1,4 @@
+//import notNeeded.CameraDropDown;
 import org.opencv.core.Mat;
 import org.opencv.imgcodecs.Imgcodecs;
 import org.opencv.videoio.VideoCapture;
@@ -43,7 +44,7 @@ public class Options implements ChangeListener {
 
     JPanel colorSliders;
     JPanel dropdowns;
-    CameraDropDown cameraDropdownBox;
+    //CameraDropDown cameraDropdownBox;
 
     int rowsForLayout = 2;
 
@@ -64,7 +65,7 @@ public class Options implements ChangeListener {
 
 
 
-        cameraDropdownBox = new CameraDropDown(cameras);
+        //cameraDropdownBox = new CameraDropDown(cameras);
 
 
 
@@ -79,8 +80,8 @@ public class Options implements ChangeListener {
         colorSliders.add(new JLabel("red"));
         colorSliders.add(redThresholder);
 
-        dropdowns.add(cameraDropdownBox);
-        //dropdowns.add(new CameraDropDown(cameras));
+        //dropdowns.add(cameraDropdownBox);
+        //dropdowns.add(new notNeeded.CameraDropDown(cameras));
 
 
         mainPanel.add(dropdowns);
