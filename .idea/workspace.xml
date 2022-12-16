@@ -9,21 +9,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f0ce2048-32c3-4842-8545-ed04f75181c7" name="Changes" comment="end of day (10/15/22)">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/illposed_osc_javaosc_core.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/opencv_3412.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/OSC/OSCReceiver.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/OSC/OSCSender.java" afterDir="false" />
+    <list default="true" id="f0ce2048-32c3-4842-8545-ed04f75181c7" name="Changes" comment="Added the ability to resize the output and made the color selection process more sensitive.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spotlight.iml" beforeDir="false" afterPath="$PROJECT_DIR$/spotlight.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CameraDropDown.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ColorSelector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ColorSelector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/OSCControler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/OSC/OSCControler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Options.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Options.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/OptionsTab.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/OptionsTab.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/OptionsTab.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/OptionsTab.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/customOpencvObjects/CustomVideoCapture.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/customOpencvObjects/CustomVideoCapture.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/OSC/OSCSender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/OSC/OSCSender.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,12 +113,14 @@
     "Repository.Attach.Annotations": "false",
     "Repository.Attach.JavaDocs": "false",
     "Repository.Attach.Sources": "false",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "C:/Users/drumb/IdeaProjects/SpotlightTracker/libs/opencv/build/java/x64/opencv_java3412.dll",
-    "project.structure.last.edited": "Libraries",
+    "last_opened_file_path": "C:/Users/drumb/IdeaProjects/SpotlightTracker",
+    "project.structure.last.edited": "SDKs",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.lookFeel"
+    "settings.editor.selected.configurable": "editor.preferences.fonts.default"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -149,7 +139,7 @@
       <recent name="C:\Users\s612902\eclipse-workspace\spotlight\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main (1)">
+  <component name="RunManager" selected="Application.OSCSender">
     <configuration name="ColorSelector" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="15" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -201,8 +191,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main (1)" />
         <item itemvalue="Application.OSCSender" />
+        <item itemvalue="Application.Main (1)" />
         <item itemvalue="Application.OSCReceiver" />
         <item itemvalue="Application.OptionsTab" />
         <item itemvalue="Application.ColorSelector" />
@@ -239,7 +229,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665856725574</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Added the ability to resize the output and made the color selection process more sensitive.">
+      <created>1668056444002</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1668056444002</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -261,6 +258,11 @@
     <MESSAGE value="end of day (2/15/22)&#10;&#10;added more options and made notes to be done at a later date" />
     <MESSAGE value="end of day (3/19/22)&#10;&#10;added comments and a better UI" />
     <MESSAGE value="end of day (10/15/22)" />
-    <option name="LAST_COMMIT_MESSAGE" value="end of day (10/15/22)" />
+    <MESSAGE value="Added the ability to resize the output and made the color selection process more sensitive." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added the ability to resize the output and made the color selection process more sensitive." />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
