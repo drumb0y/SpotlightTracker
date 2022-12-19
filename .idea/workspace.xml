@@ -9,9 +9,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f0ce2048-32c3-4842-8545-ed04f75181c7" name="Changes" comment="Added the ability to resize the output and made the color selection process more sensitive.">
+    <list default="true" id="f0ce2048-32c3-4842-8545-ed04f75181c7" name="Changes" comment="worked on OSC Communication">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/OSC/OSCSender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/OSC/OSCSender.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/OSC/OSCReceiver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/OSC/OSCReceiver.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,23 +106,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Downloaded.Files.Path.Enabled": "false",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "C:/Users/drumb/IdeaProjects/SpotlightTracker",
-    "project.structure.last.edited": "SDKs",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "editor.preferences.fonts.default"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/drumb/IdeaProjects/SpotlightTracker&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.fonts.default&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="notNeeded" />
@@ -191,9 +191,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.OSCReceiver" />
         <item itemvalue="Application.OSCSender" />
         <item itemvalue="Application.Main (1)" />
-        <item itemvalue="Application.OSCReceiver" />
         <item itemvalue="Application.OptionsTab" />
         <item itemvalue="Application.ColorSelector" />
       </list>
@@ -236,7 +236,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668056444002</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="worked on OSC Communication">
+      <created>1671161879289</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1671161879289</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -259,7 +266,8 @@
     <MESSAGE value="end of day (3/19/22)&#10;&#10;added comments and a better UI" />
     <MESSAGE value="end of day (10/15/22)" />
     <MESSAGE value="Added the ability to resize the output and made the color selection process more sensitive." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added the ability to resize the output and made the color selection process more sensitive." />
+    <MESSAGE value="worked on OSC Communication" />
+    <option name="LAST_COMMIT_MESSAGE" value="worked on OSC Communication" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
