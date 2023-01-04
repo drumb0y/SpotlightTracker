@@ -35,7 +35,7 @@ public class ColorSelector implements Id {
 //    private Mat greenImage = new Mat();
 //    private Mat redImage = new Mat();
 
-    OptionsTab optionsTab = new OptionsTab();
+    OptionsTab optionsTab = OptionsTab.getInstance();
 
     boolean copyOver = true;
 
@@ -56,12 +56,15 @@ public class ColorSelector implements Id {
         bluePoint = new AidansPoint(0,0);
         greenPoint = new AidansPoint(0,0);
 
+        optionsTab.setColorselector(this);
 
     }
 
 //starts and runs whole program
     public static void main(String[] args) throws InterruptedException {
         System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
+
+        System.out.println("made it to CS main()");
 
         //System.out.println(mat.dump());
 
@@ -86,6 +89,7 @@ public class ColorSelector implements Id {
 //setup each tolerance slider, the path to the default video, and associated camera
     void scan_1() throws InterruptedException {
 
+        System.out.println("made it to scan_1");
 
 
         Display.setGreenTollerence(greenThresholder);
@@ -140,6 +144,7 @@ public class ColorSelector implements Id {
         width = (int) camera.get(Videoio.CAP_PROP_FRAME_WIDTH);
         height = (int) camera.get(Videoio.CAP_PROP_FRAME_HEIGHT);
 
+        System.out.println("made it to while loop");
         while (camera.read(originalImage)) {
             Imgproc.resize(originalImage, originalImage, new Size(width,height));
             //Thread.sleep((long) (((double) 1/6)*100));

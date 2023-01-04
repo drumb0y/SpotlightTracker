@@ -9,6 +9,7 @@ import javax.swing.event.ChangeListener;
 import javax.swing.event.ChangeEvent;
 
 import java.awt.*;
+import java.util.ArrayList;
 
 
 public class Display implements Id, ChangeListener {
@@ -287,15 +288,29 @@ public class Display implements Id, ChangeListener {
         if (noneStreamVisible) originalImagePanel.repaint();
         //System.out.println(greenImagePanel.getSize());
 
+
         int width = greenImagePanel.getWidth();
 
 
         //System.out.println(greenImagePanel.getSize() + ",  " +greenImagePanel.getWidth() + ", " + greenTollerence.getSize());
 
+        double[] arr = OptionsTab.getInstance().getPolarCordinates();
+        OptionsTab.getInstance().getOscgui().sendMessage("/eos/chan/250/param/tilt/pan", arrayToArraylist(arr));
 
         //frame.pack();
 
         //images.clear();
+    }
+
+    public ArrayList<Double> arrayToArraylist(double[] array) {
+        ArrayList<Double> arraylist = new ArrayList<>();
+
+        for (double a :
+                array) {
+            arraylist.add(a);
+        }
+
+        return arraylist;
     }
 
     public int getId() {

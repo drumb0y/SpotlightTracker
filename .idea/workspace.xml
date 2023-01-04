@@ -10,8 +10,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f0ce2048-32c3-4842-8545-ed04f75181c7" name="Changes" comment="worked on OSC Communication">
+      <change afterPath="$PROJECT_DIR$/src/CartisionToPolar.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/OSC/OSCGUI.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/OSC/OSCGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spotlight.iml" beforeDir="false" afterPath="$PROJECT_DIR$/spotlight.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ColorSelector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ColorSelector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Display.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Display.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/OSC/OSCControler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/OSC/OSCControler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/OSC/OSCReceiver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/OSC/OSCReceiver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/OSC/OSCSender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/OSC/OSCSender.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/OptionsTab.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/OptionsTab.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/OptionsTab.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/OptionsTab.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,6 +127,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/drumb/IdeaProjects/SpotlightTracker&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
@@ -133,16 +145,15 @@
       <recent name="C:\Users\s612902\eclipse-workspace\spotlight\src" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\drumb\IdeaProjects\SpotlightTracker\Media" />
       <recent name="C:\Users\15126\IdeaProjects\SpotlightTracker\Media" />
       <recent name="C:\Users\15126\IdeaProjects\SpotlightTracker\src" />
       <recent name="C:\Users\s612902\eclipse-workspace\spotlight\Media" />
       <recent name="C:\Users\s612902\eclipse-workspace\spotlight\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.OSCSender">
+  <component name="RunManager" selected="Application.ColorSelector">
     <configuration name="ColorSelector" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="ALTERNATIVE_JRE_PATH" value="15" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="ColorSelector" />
       <module name="spotlight" />
       <method v="2">
@@ -152,6 +163,19 @@
     <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="spotlight" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OSCGUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="OSC.OSCGUI" />
+      <module name="spotlight" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="OSC.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -182,20 +206,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="OptionsTab" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="OptionsTab" />
-      <module name="spotlight" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.OSCReceiver" />
-        <item itemvalue="Application.OSCSender" />
-        <item itemvalue="Application.Main (1)" />
-        <item itemvalue="Application.OptionsTab" />
         <item itemvalue="Application.ColorSelector" />
+        <item itemvalue="Application.Main (1)" />
+        <item itemvalue="Application.OSCGUI" />
+        <item itemvalue="Application.OSCSender" />
+        <item itemvalue="Application.OSCReceiver" />
       </list>
     </recent_temporary>
   </component>
@@ -243,7 +260,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671161879289</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="worked on OSC Communication">
+      <created>1671417608673</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1671417608673</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -268,6 +292,37 @@
     <MESSAGE value="Added the ability to resize the output and made the color selection process more sensitive." />
     <MESSAGE value="worked on OSC Communication" />
     <option name="LAST_COMMIT_MESSAGE" value="worked on OSC Communication" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Display.java</url>
+          <line>291</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ColorSelector.java</url>
+          <line>68</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ColorSelector.java</url>
+          <line>72</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ColorSelector.java</url>
+          <line>94</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ColorSelector.java</url>
+          <line>146</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

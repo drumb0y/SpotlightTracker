@@ -1,3 +1,5 @@
+import OSC.OSCGUI;
+import OSC.OSCSender;
 import customOpencvObjects.CustomVideoCapture;
 import org.opencv.core.CvType;
 import org.opencv.core.Mat;
@@ -31,7 +33,6 @@ public class OptionsTab {
     private JPanel CameraSelection;
     private JPanel CameraPosition;
     private JPanel LightPosition;
-    private JPanel OSC;
     private JTextField CameraPosX;
     private JTextField CameraPosY;
     private JTextField CameraPosZ;
@@ -41,6 +42,8 @@ public class OptionsTab {
     private JTextField textField6;
 
 
+
+
     public OptionsTab() {
 
 
@@ -48,9 +51,16 @@ public class OptionsTab {
         setupCheckboxes();
         setupSpinner();
         setupDropdown();
+        setupRadioButtons();
+        setupGUI();
 
         setupFrame();
 
+    }
+
+    ColorSelector colorSelector;
+    public void setColorselector(ColorSelector c) {
+        colorSelector = c;
     }
 
     private void setupSpinner() {
@@ -62,12 +72,19 @@ public class OptionsTab {
         String path = "Media/How the Endocrine System Works.mp4";
         CustomVideoCapture[] cameras = {
                 (new CustomVideoCapture("How the Endocrine System Works", path)),
-                (new CustomVideoCapture("Front notNeeded.Camera",0, Videoio.CAP_DSHOW)),
-                (new CustomVideoCapture("ColorTest", "Media/colorTest.mp4" ))};
+                (new CustomVideoCapture("Front Camera",0, Videoio.CAP_DSHOW)),
+                (new CustomVideoCapture("ColorTest", "Media/colorTest.mp4" )),
+                (new CustomVideoCapture("external camera", 1, Videoio.CAP_DSHOW)),
+                (new CustomVideoCapture("Thespian at work", "Media/2023-01-02 15-40-24.mp4" )),
+                (new CustomVideoCapture("Camera 3", 2, Videoio.CAP_DSHOW)),
+                (new CustomVideoCapture("Camera 4", 3, Videoio.CAP_DSHOW))};
 
         cameraDropDown.addItem(cameras[0]);
         cameraDropDown.addItem(cameras[1]);
         cameraDropDown.addItem(cameras[2]);
+        cameraDropDown.addItem(cameras[3]);
+        cameraDropDown.addItem(cameras[4]);
+        cameraDropDown.addItem(cameras[5]);
 
         cameraDropDown.setSelectedIndex(0);
         cameraDropDown.addActionListener(new cameraDropboxDropped());
@@ -113,9 +130,75 @@ public class OptionsTab {
         showUnfilterdVideoStreamCheckBox.addActionListener(new checkboxToggled(Color.NONE));
     }
 
+    OSCGUI oscgui;
+    private void setupGUI() {
+        oscgui = new OSCGUI();
+    }
+
+    public OSCGUI getOscgui() {
+        return oscgui;
+    }
+
+    ButtonGroup cordinateUseButtons;
+    private void setupRadioButtons() {
+        cordinateUseButtons = new ButtonGroup();
+
+        cordinateUseButtons.add(useBlueCodinatesRadioButton);
+        cordinateUseButtons.add(useGreenCodinatesRadioButton1);
+        cordinateUseButtons.add(useRedCodinatesRadioButton);
+
+        useBlueCodinatesRadioButton.addActionListener(new coordinatesSwitched(Color.BLUE, oscgui, this));
+    }
+
+
+    //todo make the radio buttons actually do something
+
     //action listeners
 
-   // private class
+
+
+    private class coordinatesSwitched implements ActionListener {
+        Color colortype;
+
+        OSCGUI GUI;
+        OptionsTab options;
+
+        public coordinatesSwitched(Color color, OSCGUI g, OptionsTab tab) {
+            //c = ColorSelector.getInstance();
+            colortype = color;
+            GUI = g;
+            options = tab;
+
+        }
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            JRadioButton button = (JRadioButton) e.getSource();
+
+            options.setPoint(colortype);
+        }
+    }
+
+    AidansPoint CurrentPoint = new AidansPoint(0,0);
+
+    public void setPoint(Color c) {
+        switch (c) {
+            case RED -> {CurrentPoint = colorSelector.redPoint;}
+            case BLUE -> {CurrentPoint = colorSelector.bluePoint;}
+            case GREEN -> {CurrentPoint = colorSelector.greenPoint;}
+        }
+
+
+    }
+
+    public double[] getPolarCordinates() {
+        int x = CurrentPoint.x;
+        int y = CurrentPoint.y;
+
+        return CartisionToPolar.convert(x,y);
+    }
+
+    // private class
     private class sliderMoved implements ChangeListener {
 
         Color color;
@@ -299,6 +382,12 @@ public class OptionsTab {
     private JTextField textField8;
     private JTextField textField9;
     private JSpinner resolutionScalingFactor;
+    private JRadioButton useRedCodinatesRadioButton;
+    private JRadioButton useBlueCodinatesRadioButton;
+    private JRadioButton useGreenCodinatesRadioButton1;
+    private JPanel OSC;
+    private JTextField IPADDRESS;
+    private JTextField PORTNUM;
     private JSpinner Scale;
 
 
