@@ -1,5 +1,4 @@
 import OSC.OSCGUI;
-import OSC.OSCSender;
 import customOpencvObjects.CustomVideoCapture;
 import org.opencv.core.CvType;
 import org.opencv.core.Mat;
@@ -29,7 +28,7 @@ public class OptionsTab {
     private JCheckBox showBlueStreamCheckBox;
     private JCheckBox showGreenStreamCheckBox;
     private JCheckBox showRedStreamCheckBox;
-    private JCheckBox showUnfilterdVideoStreamCheckBox;
+    private JCheckBox showUnfilteredVideoStreamCheckBox;
     private JPanel CameraSelection;
     private JPanel CameraPosition;
     private JPanel LightPosition;
@@ -71,13 +70,13 @@ public class OptionsTab {
     private void setupDropdown() {
         String path = "Media/How the Endocrine System Works.mp4";
         CustomVideoCapture[] cameras = {
-                (new CustomVideoCapture("How the Endocrine System Works", path)),
-                (new CustomVideoCapture("Front Camera",0, Videoio.CAP_DSHOW)),
-                (new CustomVideoCapture("ColorTest", "Media/colorTest.mp4" )),
-                (new CustomVideoCapture("external camera", 1, Videoio.CAP_DSHOW)),
-                (new CustomVideoCapture("Thespian at work", "Media/2023-01-02 15-40-24.mp4" )),
-                (new CustomVideoCapture("Camera 3", 2, Videoio.CAP_DSHOW)),
-                (new CustomVideoCapture("Camera 4", 3, Videoio.CAP_DSHOW))};
+                (new CustomVideoCapture("How the Endocrine System Works", path, 60)),
+                (new CustomVideoCapture("Front Camera",0, Videoio.CAP_DSHOW, 84)),
+                (new CustomVideoCapture("ColorTest", "Media/colorTest.mp4", 40 )),
+                (new CustomVideoCapture("external camera", 1, Videoio.CAP_DSHOW, 40)),
+                (new CustomVideoCapture("Thespian at work", "Media/2023-01-02 15-40-24.mp4", 40)),
+                (new CustomVideoCapture("test 1-14", "Media/20230115_070059_0003.MP4", 20)),
+                (new CustomVideoCapture("Camera 4", 3, Videoio.CAP_DSHOW, 100))};
 
         cameraDropDown.addItem(cameras[0]);
         cameraDropDown.addItem(cameras[1]);
@@ -86,7 +85,7 @@ public class OptionsTab {
         cameraDropDown.addItem(cameras[4]);
         cameraDropDown.addItem(cameras[5]);
 
-        cameraDropDown.setSelectedIndex(0);
+        cameraDropDown.setSelectedIndex(1);
         cameraDropDown.addActionListener(new cameraDropboxDropped());
 
         possibleResolutionOptions.addActionListener(new resolution());
@@ -127,7 +126,7 @@ public class OptionsTab {
         showBlueStreamCheckBox.addActionListener(new checkboxToggled(Color.BLUE));
         showGreenStreamCheckBox.addActionListener(new checkboxToggled(Color.GREEN));
         showRedStreamCheckBox.addActionListener(new checkboxToggled(Color.RED));
-        showUnfilterdVideoStreamCheckBox.addActionListener(new checkboxToggled(Color.NONE));
+        showUnfilteredVideoStreamCheckBox.addActionListener(new checkboxToggled(Color.NONE));
     }
 
     OSCGUI oscgui;
@@ -139,15 +138,20 @@ public class OptionsTab {
         return oscgui;
     }
 
-    ButtonGroup cordinateUseButtons;
+    ButtonGroup coordinateUseButtons;
     private void setupRadioButtons() {
-        cordinateUseButtons = new ButtonGroup();
+        coordinateUseButtons = new ButtonGroup();
 
-        cordinateUseButtons.add(useBlueCodinatesRadioButton);
-        cordinateUseButtons.add(useGreenCodinatesRadioButton1);
-        cordinateUseButtons.add(useRedCodinatesRadioButton);
+        coordinateUseButtons.add(useBlueCoordinatesRadioButton);
+        coordinateUseButtons.add(useGreenCoordinatesRadioButton);
+        coordinateUseButtons.add(useRedCoordinatesRadioButton);
+        coordinateUseButtons.add(useNothing);
 
-        useBlueCodinatesRadioButton.addActionListener(new coordinatesSwitched(Color.BLUE, oscgui, this));
+        useBlueCoordinatesRadioButton.addActionListener(new coordinatesSwitched(Color.BLUE, oscgui, this));
+        useGreenCoordinatesRadioButton.addActionListener(new coordinatesSwitched(Color.GREEN, oscgui, this));
+        useRedCoordinatesRadioButton.addActionListener(new coordinatesSwitched(Color.RED, oscgui, this));
+        useNothing.addActionListener(new coordinatesSwitched(Color.NONE, oscgui, this));
+
     }
 
 
@@ -175,27 +179,34 @@ public class OptionsTab {
         public void actionPerformed(ActionEvent e) {
             JRadioButton button = (JRadioButton) e.getSource();
 
-            options.setPoint(colortype);
+            System.out.println("changed colorType to " + colortype);
+
+            options.setColor(colortype);
         }
     }
 
-    AidansPoint CurrentPoint = new AidansPoint(0,0);
 
-    public void setPoint(Color c) {
-        switch (c) {
-            case RED -> {CurrentPoint = colorSelector.redPoint;}
-            case BLUE -> {CurrentPoint = colorSelector.bluePoint;}
-            case GREEN -> {CurrentPoint = colorSelector.greenPoint;}
-        }
+    Color currentColor = Color.RED;
 
+    public void setColor(Color c) {
+currentColor = c;
 
     }
 
     public double[] getPolarCordinates() {
+        AidansPoint CurrentPoint;
+
+        switch (currentColor) {
+            case RED -> {CurrentPoint = colorSelector.redPoint;}
+            case BLUE -> {CurrentPoint = colorSelector.bluePoint;}
+            case GREEN -> {CurrentPoint = colorSelector.greenPoint;}
+            default -> CurrentPoint = new AidansPoint(0,0);
+        }
+
         int x = CurrentPoint.x;
         int y = CurrentPoint.y;
 
-        return CartisionToPolar.convert(x,y);
+        return CartesianToPolar.convert(x,y);
     }
 
     // private class
@@ -256,12 +267,21 @@ public class OptionsTab {
             }
             ColorSelector.getInstance().setCamera(cam);
 
+            int factor = cam.getZoom();
+            int width = (int) cam.get(Videoio.CAP_PROP_FRAME_WIDTH);
+            int height = (int) cam.get(Videoio.CAP_PROP_FRAME_HEIGHT);
+
+
+            ColorSelector.getInstance().setSize(width*factor/100,height*factor/100);
+
         }
     }
 
     private JComboBox possibleResolutionOptions;
 
     private class resolutionScalingListener implements ChangeListener {
+
+
 
         @Override
         public void stateChanged(ChangeEvent e) {
@@ -351,9 +371,9 @@ public class OptionsTab {
     public enum Color {
         RED, GREEN, BLUE, NONE
     }
-    private JLabel CordinateRed;
-    private JLabel CordinateGreen;
-    private JLabel CordinateBlue;
+    private JLabel coordinateRed;
+    private JLabel coordinateGreen;
+    private JLabel coordinateBlue;
 
     public void pointToLabel(Color c, AidansPoint p) {
         int x = p.x;
@@ -361,13 +381,13 @@ public class OptionsTab {
 
         switch (c) {
             case RED:
-                CordinateRed.setText("(" + x + ", " + y + ")");
+                coordinateRed.setText("(" + x + ", " + y + ")");
                 break;
             case BLUE:
-                CordinateBlue.setText("(" + x + ", " + y + ")");
+                coordinateBlue.setText("(" + x + ", " + y + ")");
                 break;
             case GREEN:
-                CordinateGreen.setText("(" + x + ", " + y + ")");
+                coordinateGreen.setText("(" + x + ", " + y + ")");
                 break;
         }
     }
@@ -382,12 +402,13 @@ public class OptionsTab {
     private JTextField textField8;
     private JTextField textField9;
     private JSpinner resolutionScalingFactor;
-    private JRadioButton useRedCodinatesRadioButton;
-    private JRadioButton useBlueCodinatesRadioButton;
-    private JRadioButton useGreenCodinatesRadioButton1;
+    private JRadioButton useRedCoordinatesRadioButton;
+    private JRadioButton useBlueCoordinatesRadioButton;
+    private JRadioButton useGreenCoordinatesRadioButton;
     private JPanel OSC;
     private JTextField IPADDRESS;
     private JTextField PORTNUM;
+    private JRadioButton useNothing;
     private JSpinner Scale;
 
 
@@ -411,5 +432,5 @@ public class OptionsTab {
         return instance;
     }
 
-    //add mainclasses for lots of classes to do inividual tests of features.
+    //add main classes for lots of classes to do individual tests of features.
 }

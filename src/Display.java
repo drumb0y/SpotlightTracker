@@ -18,9 +18,9 @@ public class Display implements Id, ChangeListener {
     int numbers;
     int id;
 
-    static ThresholdingSlider greenTollerence;
-    static ThresholdingSlider blueTollerence;
-    static ThresholdingSlider redTollerence;
+    static ThresholdingSlider greenTolerance;
+    static ThresholdingSlider blueTolerance;
+    static ThresholdingSlider redTolerance;
 
 
     Image greenImage, blueImage, redImage, originalImage;
@@ -148,7 +148,7 @@ public class Display implements Id, ChangeListener {
         }
     };
 
-    //JSlider greenTollerence = new JSlider(JSlider.HORIZONTAL, 0,255, greenThresholder.greenThreshold);
+    //JSlider greenTolerance = new JSlider(JSlider.HORIZONTAL, 0,255, greenThresholder.greenThreshold);
     //ImageIcon icon;
 
     public Display() {
@@ -196,9 +196,9 @@ public class Display implements Id, ChangeListener {
         //frame.setLayout(new GridLayout(2, 2));
         frame.setSize(img2.getWidth(null) + 50, img2.getHeight(null) + 50);
 
-        greenTollerence.addChangeListener(this);
-        blueTollerence.addChangeListener(this);
-        redTollerence.addChangeListener(this);
+        greenTolerance.addChangeListener(this);
+        blueTolerance.addChangeListener(this);
+        blueTolerance.addChangeListener(this);
 
         greenPoint = new JLabel();
         bluePoint = new JLabel();
@@ -209,13 +209,13 @@ public class Display implements Id, ChangeListener {
         redImagePanel.add(redPoint);
 
 
-       // greenImagePanel.add(greenTollerence);
-       // blueImagePanel.add(blueTollerence);
-       // redImagePanel.add(redTollerence);
+       // greenImagePanel.add(greenTolerance);
+       // blueImagePanel.add(blueTolerance);
+       // redImagePanel.add(redTolerance);
 
-        greenTollerence.setPreferredSize(new Dimension(640, 50));
-        redTollerence.setPreferredSize(new Dimension(640, 50));
-        blueTollerence.setPreferredSize(new Dimension(640, 50));
+        greenTolerance.setPreferredSize(new Dimension(640, 50));
+        blueTolerance.setPreferredSize(new Dimension(640, 50));
+        blueTolerance.setPreferredSize(new Dimension(640, 50));
 
 
         imagePanels.setLayout(new GridLayout(2,2));
@@ -231,7 +231,7 @@ public class Display implements Id, ChangeListener {
         frame.add(tabbedPane);
 
         frame.pack();
-        //greenTollerence.setSize(100, 100);
+        //greenTolerance.setSize(100, 100);
 
         frame.setVisible(true);
         frame.setResizable(true);
@@ -321,16 +321,15 @@ public class Display implements Id, ChangeListener {
         numbers += i;
     }
 
-    public static void setGreenTollerence(ThresholdingSlider greenTollerence1) {
-        greenTollerence = greenTollerence1;
+    public static void setGreenTolerence(ThresholdingSlider greenTolerence1) {
+        greenTolerance = greenTolerence1;
     }
 
-    public static void setBlueTollerence(ThresholdingSlider blueTollerence) {
-        Display.blueTollerence = blueTollerence;
+    public static void setBlueTolerence(ThresholdingSlider blueTolerence1) { blueTolerance = blueTolerence1;
     }
 
-    public static void setRedTollerence(ThresholdingSlider redTollerence) {
-        Display.redTollerence = redTollerence;
+    public static void setRedTolerence(ThresholdingSlider redTolerence1) {
+        redTolerance = redTolerence1;
     }
 
     private static Display instance = null;
@@ -403,15 +402,15 @@ public class Display implements Id, ChangeListener {
         ThresholdingSlider source = (ThresholdingSlider) e.getSource();
 
         if (source.sameColorType(ThresholdingSlider.Colors.GREEN)) {
-            greenTollerence.threshold = source.getValue();
+            greenTolerance.threshold = source.getValue();
         }
 
         if (source.sameColorType(ThresholdingSlider.Colors.BLUE)) {
-            blueTollerence.threshold = source.getValue();
+            blueTolerance.threshold = source.getValue();
         }
 
         if (source.sameColorType(ThresholdingSlider.Colors.RED)) {
-            redTollerence.threshold = source.getValue();
+            redTolerance.threshold = source.getValue();
         }
 
         //System.out.println("AAAAAAAAAAAAAAAAAAAAAAAAAAAAA         changed state: " + source.getValue());

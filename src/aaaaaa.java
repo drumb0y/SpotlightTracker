@@ -3,6 +3,7 @@ import org.opencv.core.CvType;
 import org.opencv.core.Mat;
 import org.opencv.core.Scalar;
 
+@SuppressWarnings("ALL")
 public class aaaaaa {
     static{ System.loadLibrary(Core.NATIVE_LIBRARY_NAME); }
 

@@ -1,3 +1,4 @@
+@SuppressWarnings("ALL")
 public class AidansPoint {
     int x,y;
 

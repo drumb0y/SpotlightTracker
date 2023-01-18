@@ -62,9 +62,9 @@ public class OSCGUI {
     private JPanel colors;
     private JTextField channelNumber;
     private JPanel sliders;
-    private JSpinner spinner1;
-    private JSpinner spinner2;
-    private JSpinner spinner3;
+    private JSpinner zoomSpinner;
+    private JSpinner panSpinner;
+    private JSpinner tiltSpinner;
 
 
     private void setupFrame() {
@@ -90,13 +90,17 @@ public class OSCGUI {
         colorChooser = new JColorChooser();
         colorChooser.getSelectionModel().addChangeListener(new colorSelectorListener(this));
 
+        zoomSpinner.addChangeListener(new presetListener(this, presetType.ZOOM));
+        panSpinner.addChangeListener(new presetListener(this, presetType.PAN));
+        tiltSpinner.addChangeListener(new presetListener(this, presetType.TILT));
+
 
 
         colors.add(colorChooser);
 
     }
     private void setupBasicPanels() {
-        sendButton.addActionListener(new sendButtonListener(sender, MessageField, argsField));
+        sendButton.addActionListener(new sendButtonListener(this, MessageField, argsField));
         ipAddressField.setText(sender.getIpaddress());
         ipAddressField.addActionListener(new IPtextBoxListener(sender));
 
@@ -130,7 +134,13 @@ public class OSCGUI {
         sender.sendMessage(m);
     }
 
+    public void sendMessageLoud(String address, ArrayList<Double> args) {
+        System.out.println(address + args);
+        sendMessage(address,args);
+    }
+
     public void sendMessage(String address, ArrayList<Double> args) {
+        //System.out.println(address + args);
         sender.sendMessage(address,args);
     }
 
@@ -154,7 +164,7 @@ public class OSCGUI {
             if (m != null) sender.getMessageQueue().remove();
 
         }
-        System.out.println("made it to the OSC GUI update()");
+        //System.out.println("made it to the OSC GUI update()");
 
 
         if (AddressPanel.getComponents().length > 19) {
@@ -191,7 +201,7 @@ public class OSCGUI {
             InfoPanel.validate();
         }
 
-        System.out.println("Tried to add");
+        //System.out.println("Tried to add");
 
 
     }
@@ -213,13 +223,47 @@ public class OSCGUI {
     }
 }
 
+enum presetType {
+    TILT, PAN, ZOOM;
+}
+
+
+class presetListener implements ChangeListener {
+
+    OSCGUI gui;
+    int chanNum= 250;
+    presetType type;
+
+    public presetListener(OSCGUI g, presetType type) {
+        this.gui = g;
+        this.type = type;
+        chanNum = Integer.parseInt(g.getChannelNumber().getText());
+    }
+
+    @Override
+    public void stateChanged(ChangeEvent e) {
+        String address = "/eos/chan/" + chanNum + "/param/";
+        ArrayList<Double> args = new ArrayList<>();
+        args.add(Double.valueOf((int) ((JSpinner) e.getSource()).getValue()));
+
+
+        switch (type) {
+            case PAN -> {address += "pan";}
+            case TILT -> {address += "tilt";}
+            case ZOOM -> {address += "zoom";}
+        }
+
+
+        gui.sendMessageLoud(address, args);
+    }
+}
 class sendButtonListener implements ActionListener {
 
-    OSCSender SENDER;
+    OSCGUI gui;
     JTextField Messeger;
     JTextField argsfield;
-    public sendButtonListener(OSCSender sender, JTextField msger, JTextField args) {
-        SENDER = sender;
+    public sendButtonListener(OSCGUI gui, JTextField msger, JTextField args) {
+        this.gui = gui;
         Messeger = msger;
         argsfield = args;
 
@@ -231,7 +275,7 @@ class sendButtonListener implements ActionListener {
         JButton button = (JButton) e.getSource();
 
 
-        SENDER.sendMessage(Messeger.getText(), OSCGUI.stringToList(argsfield.getText()));
+        gui.sendMessage(Messeger.getText(), OSCGUI.stringToList(argsfield.getText()));
 
         System.out.println("tried to send: " + Messeger.getText() + OSCGUI.stringToList(argsfield.getText()));
 
@@ -279,9 +323,9 @@ class colorSelectorListener implements ChangeListener {
         magenta.add(CMY.get(1));
         yellow.add(CMY.get(2));
 
-        sender.sendMessage(CyanAddress, cyan);
-        sender.sendMessage(MagentaAddress, magenta);
-        sender.sendMessage(YellowAddress, yellow);
+        gui.sendMessageLoud(CyanAddress, cyan);
+        gui.sendMessageLoud(MagentaAddress, magenta);
+        gui.sendMessageLoud(YellowAddress, yellow);
 
 
 //        sender.sendMessage(address, rgbToCmy(color));

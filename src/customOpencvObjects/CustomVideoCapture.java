@@ -7,15 +7,26 @@ public class CustomVideoCapture extends VideoCapture {
     String NAME;
     String filename;
 
+    int zoom;
 
-    public CustomVideoCapture(String name, String fileName) {
+
+    public CustomVideoCapture(String name, String fileName, int zoomFactor) {
         super(fileName);
         filename = fileName;
         NAME = name;
+        zoom = zoomFactor;
+
     }
-    public CustomVideoCapture(String name, int index, int apiPreference) {
+    public CustomVideoCapture(String name, int index, int apiPreference, int zoomFactor) {
         super(index, apiPreference);
         NAME = name;
+
+        zoom = zoomFactor;
+
+    }
+
+    public int getZoom() {
+        return zoom;
     }
 
     public void reset() {

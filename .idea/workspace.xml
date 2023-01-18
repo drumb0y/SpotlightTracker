@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="CUSTOM_SCOPE_NAME" value="src" />
+    <option name="FILE_MASK" value="*.java" />
+  </component>
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
       <artifact name="spotlight:jar" />
@@ -9,20 +13,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f0ce2048-32c3-4842-8545-ed04f75181c7" name="Changes" comment="worked on OSC Communication">
-      <change afterPath="$PROJECT_DIR$/src/CartisionToPolar.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/OSC/OSCGUI.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/OSC/OSCGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="f0ce2048-32c3-4842-8545-ed04f75181c7" name="Changes" comment="worked on connecting the Computer vision and calculated positioning to the OSC Messages into an external device">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spotlight.iml" beforeDir="false" afterPath="$PROJECT_DIR$/spotlight.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AidansPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AidansPoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CartisionToPolar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CartesianToPolar.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ColorSelector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ColorSelector.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Display.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Display.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/OSC/OSCControler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/OSC/OSCControler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/OSC/OSCGUI.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/OSC/OSCGUI.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/OSC/OSCGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/OSC/OSCGUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/OSC/OSCReceiver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/OSC/OSCReceiver.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/OSC/OSCSender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/OSC/OSCSender.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Options.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Options.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/OptionsTab.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/OptionsTab.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/OptionsTab.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/OptionsTab.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/aaaaaa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/aaaaaa.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/customOpencvObjects/CustomVideoCapture.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/customOpencvObjects/CustomVideoCapture.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,6 +61,12 @@
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="NamedScopeManager">
+    <scope name="src" pattern="" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="1xXdmGFNfDHHQrLHj3ZlmhEfJMt" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -117,29 +129,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/drumb/IdeaProjects/SpotlightTracker&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.fonts.default&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW": "true",
+    "last_opened_file_path": "C:/Users/drumb/IdeaProjects/SpotlightTracker/Media",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "editor.preferences.fonts.default"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="notNeeded" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\drumb\IdeaProjects\SpotlightTracker\Media" />
       <recent name="C:\Users\s612902\eclipse-workspace\spotlight\lib" />
       <recent name="C:\Users\s612902\eclipse-workspace\spotlight\openCVLibrary" />
       <recent name="C:\Users\s612902\eclipse-workspace\spotlight\src" />
@@ -152,7 +165,7 @@
       <recent name="C:\Users\s612902\eclipse-workspace\spotlight\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ColorSelector">
+  <component name="RunManager" selected="Application.Main (1)">
     <configuration name="ColorSelector" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ColorSelector" />
       <module name="spotlight" />
@@ -208,9 +221,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.ColorSelector" />
         <item itemvalue="Application.Main (1)" />
         <item itemvalue="Application.OSCGUI" />
+        <item itemvalue="Application.ColorSelector" />
         <item itemvalue="Application.OSCSender" />
         <item itemvalue="Application.OSCReceiver" />
       </list>
@@ -267,7 +280,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671417608673</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="worked on connecting the Computer vision and calculated positioning to the OSC Messages into an external device">
+      <created>1672816671699</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1672816671699</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -291,7 +311,8 @@
     <MESSAGE value="end of day (10/15/22)" />
     <MESSAGE value="Added the ability to resize the output and made the color selection process more sensitive." />
     <MESSAGE value="worked on OSC Communication" />
-    <option name="LAST_COMMIT_MESSAGE" value="worked on OSC Communication" />
+    <MESSAGE value="worked on connecting the Computer vision and calculated positioning to the OSC Messages into an external device" />
+    <option name="LAST_COMMIT_MESSAGE" value="worked on connecting the Computer vision and calculated positioning to the OSC Messages into an external device" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -303,23 +324,38 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/ColorSelector.java</url>
-          <line>68</line>
+          <line>69</line>
           <option name="timeStamp" value="7" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/ColorSelector.java</url>
-          <line>72</line>
+          <line>73</line>
           <option name="timeStamp" value="8" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/ColorSelector.java</url>
-          <line>94</line>
+          <line>95</line>
           <option name="timeStamp" value="9" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/ColorSelector.java</url>
-          <line>146</line>
+          <line>147</line>
           <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/OptionsTab.java</url>
+          <line>208</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/CartesianToPolar.java</url>
+          <line>35</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/OSC/OSCGUI.java</url>
+          <line>143</line>
+          <option name="timeStamp" value="14" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

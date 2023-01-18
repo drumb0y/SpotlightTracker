@@ -184,7 +184,7 @@ public class Options implements ChangeListener {
 //change name of app
 //put names for cameras (make it customizable)
 
-/** put images, different dropboxes, etc on options frame
+/** put images, different drop boxes, etc on options frame
   */
 
 

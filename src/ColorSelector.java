@@ -10,6 +10,7 @@ import java.util.List;
 
 //run this class
 
+@SuppressWarnings("SpellCheckingInspection")
 public class ColorSelector implements Id {
     int id;
 
@@ -89,12 +90,12 @@ public class ColorSelector implements Id {
 //setup each tolerance slider, the path to the default video, and associated camera
     void scan_1() throws InterruptedException {
 
-        System.out.println("made it to scan_1");
+        //System.out.println("made it to scan_1");
 
 
-        Display.setGreenTollerence(greenThresholder);
-        Display.setBlueTollerence(blueThresholder);
-        Display.setRedTollerence(redThresholder);
+        Display.setGreenTolerence(greenThresholder);
+        Display.setBlueTolerence(blueThresholder);
+        Display.setRedTolerence(redThresholder);
 
         m = Display.getInstance();
 
@@ -104,7 +105,7 @@ public class ColorSelector implements Id {
         System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
         String path = "Media/How the Endocrine System Works.mp4";
 
-        camera = new CustomVideoCapture("enddocrine",path);
+        camera = new CustomVideoCapture("endocrine",path, 60);
         //Options options = new Options();
 
         //camera = new VideoCapture(0,Videoio.CAP_DSHOW);
@@ -144,7 +145,7 @@ public class ColorSelector implements Id {
         width = (int) camera.get(Videoio.CAP_PROP_FRAME_WIDTH);
         height = (int) camera.get(Videoio.CAP_PROP_FRAME_HEIGHT);
 
-        System.out.println("made it to while loop");
+        //System.out.println("made it to while loop");
         while (camera.read(originalImage)) {
             Imgproc.resize(originalImage, originalImage, new Size(width,height));
             //Thread.sleep((long) (((double) 1/6)*100));
@@ -189,6 +190,11 @@ public class ColorSelector implements Id {
         }
 
         System.out.println("this is the end count: " + count);
+
+            //startVideo();
+            //todo make it so it doesn't crash when a video ends
+
+
     }
 
 //take the red components of the video frame and find the largest collection of pixels, according to the tolerance, and draw a contour over it.
@@ -218,7 +224,7 @@ public class ColorSelector implements Id {
         double MaxSize = 0; //size of largest pixels
         int MaxIndex = 0; //where is the group of the largest pixels
 
-        for (int i = 0; i < contours.size(); i++) { //got througth each group of pixels and find the largest one (probably the wanted object)
+        for (int i = 0; i < contours.size(); i++) { //got through each group of pixels and find the largest one (probably the wanted object)
             if (Imgproc.contourArea(contours.get(i)) > MaxSize) {
                 MaxSize = Imgproc.contourArea(contours.get(i));
                 MaxIndex = i;
@@ -306,7 +312,7 @@ public class ColorSelector implements Id {
         double MaxSize = 0; //size of largest pixels
         int MaxIndex = 0; //where is the group of the largest pixels
 
-        for (int i = 0; i < contours.size(); i++) { //got througth each group of pixels and find the largest one (probely the cup/wanted object)
+        for (int i = 0; i < contours.size(); i++) { //got through each group of pixels and find the largest one (probely the cup/wanted object)
             if (Imgproc.contourArea(contours.get(i)) > MaxSize) {
                 MaxSize = Imgproc.contourArea(contours.get(i));
                 MaxIndex = i;
@@ -391,7 +397,7 @@ public class ColorSelector implements Id {
         double MaxSize = 0; //size of largest pixels
         int MaxIndex = 0; //where is the group of largest pixels
 
-        for (int i = 0; i < contours.size(); i++) { //got througth each group of pixels and find the largest one (probely the cup/wanted object)
+        for (int i = 0; i < contours.size(); i++) { //got through each group of pixels and find the largest one (probely the cup/wanted object)
             if (Imgproc.contourArea(contours.get(i)) > MaxSize) {
                 MaxSize = Imgproc.contourArea(contours.get(i));
                 MaxIndex = i;
@@ -520,7 +526,7 @@ public class ColorSelector implements Id {
             double greenMaxSize = 0; //size of largest pixels
             int greenMaxIndex = -1; //where is the group of largest pixels
 
-            for (int i = 0; i < greenContours.size(); i++) { //got througth each group of pixels and find the largest one (probely the cup/wanted object)
+            for (int i = 0; i < greenContours.size(); i++) { //got through each group of pixels and find the largest one (probably the cup/wanted object)
                 if (Imgproc.contourArea(greenContours.get(i)) > greenMaxSize) {
                     greenMaxSize = Imgproc.contourArea(greenContours.get(i));
                     greenMaxIndex = i;
@@ -545,7 +551,7 @@ public class ColorSelector implements Id {
 //            double greenMaxSize = 0; //size of largest pixels
 //            int greenMaxIndex = -1; //where is the group of largest pixels
 //
-//            for(int i = 0; i < greenContours.size(); i++) { //got througth each group of pixels and find the largest one (probely the cup/wanted object)
+//            for(int i = 0; i < greenContours.size(); i++) { //got through each group of pixels and find the largest one (probably the cup/wanted object)
 //                if(Imgproc.contourArea(greenContours.get(i)) > greenMaxSize) {
 //                    greenMaxSize = Imgproc.contourArea(greenContours.get(i));
 //                    greenMaxIndex = i;

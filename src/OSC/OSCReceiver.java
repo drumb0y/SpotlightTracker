@@ -93,7 +93,7 @@ public void stop() {
 //    public void acceptMessage(OSCMessageEvent oscMessageEvent) {
 //        OSCMessage message = oscMessageEvent.getMessage();
 //
-//        System.out.println("Message recived: " + message.toString());
+//        System.out.println("Message received: " + message.toString());
 //    }
 //}
 class packetListener implements OSCPacketListener {
@@ -126,4 +126,4 @@ class packetListener implements OSCPacketListener {
     }
 }
 
-//TODO Add visual gui's, make both reciver and sender objects that can accept commands from others
+//TODO Add visual gui's, make both receiver and sender objects that can accept commands from others

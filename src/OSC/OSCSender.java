@@ -75,7 +75,7 @@ public class OSCSender {
 
 
         sendMessage(msg);
-        System.out.println("Sending Message: " + address + " - args: " + args + " - on IPAddress: " + ipaddress);
+        //System.out.println("Sending Message: " + address + " - args: " + args + " - on IPAddress: " + ipaddress);
 
     }
 

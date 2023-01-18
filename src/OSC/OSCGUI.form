@@ -247,19 +247,19 @@
                       <text value="Pan"/>
                     </properties>
                   </component>
-                  <component id="fbf23" class="javax.swing.JSpinner" binding="spinner1" default-binding="true">
+                  <component id="fbf23" class="javax.swing.JSpinner" binding="zoomSpinner">
                     <constraints>
                       <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
                     </constraints>
                     <properties/>
                   </component>
-                  <component id="73056" class="javax.swing.JSpinner" binding="spinner2" default-binding="true">
+                  <component id="73056" class="javax.swing.JSpinner" binding="panSpinner">
                     <constraints>
                       <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
                     </constraints>
                     <properties/>
                   </component>
-                  <component id="bae87" class="javax.swing.JSpinner" binding="spinner3" default-binding="true">
+                  <component id="bae87" class="javax.swing.JSpinner" binding="tiltSpinner">
                     <constraints>
                       <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
                     </constraints>
