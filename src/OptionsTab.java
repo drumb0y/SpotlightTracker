@@ -66,6 +66,31 @@ public class OptionsTab {
         resolutionScalingFactor.setValue(100);
         resolutionScalingFactor.addChangeListener(new resolutionScalingListener());
     }
+    
+    private ArrayList<CustomVideoCapture> scanforCameras() {
+        ArrayList<CustomVideoCapture> cams = new ArrayList<>();
+        cams.add(new CustomVideoCapture("How the Endocrine System Works", "Media/How the Endocrine System Works.mp4", 60));
+        cams.add(new CustomVideoCapture("Front Camera",0, Videoio.CAP_DSHOW, 84));
+        cams.add(new CustomVideoCapture("ColorTest", "Media/colorTest.mp4", 40 ));
+        cams.add(new CustomVideoCapture("external camera", 1, Videoio.CAP_DSHOW, 40));
+        cams.add(new CustomVideoCapture("External 2", 2, Videoio.CAP_DSHOW, 40));
+        cams.add(new CustomVideoCapture("Thespian at work", "Media/2023-01-02 15-40-24.mp4", 40));
+                cams.add(new CustomVideoCapture("test 1-14", "Media/20230115_070059_0003.MP4", 20));
+                cams.add(new CustomVideoCapture("Camera 3", 3, Videoio.CAP_DSHOW, 100));
+
+        for (int i = 4; i <= 10; i++) {
+            CustomVideoCapture c = new CustomVideoCapture("camera: " + i,i, Videoio.CAP_DSHOW, 60);
+            //if (c.)
+            cams.add(new CustomVideoCapture("Front Camera",0, Videoio.CAP_DSHOW, 84));
+
+        }
+        return null;
+    }
+
+    private boolean isValidCamera(CustomVideoCapture c) {
+ return false;
+    }
+
 
     private void setupDropdown() {
         String path = "Media/How the Endocrine System Works.mp4";
@@ -76,14 +101,13 @@ public class OptionsTab {
                 (new CustomVideoCapture("external camera", 1, Videoio.CAP_DSHOW, 40)),
                 (new CustomVideoCapture("Thespian at work", "Media/2023-01-02 15-40-24.mp4", 40)),
                 (new CustomVideoCapture("test 1-14", "Media/20230115_070059_0003.MP4", 20)),
-                (new CustomVideoCapture("Camera 4", 3, Videoio.CAP_DSHOW, 100))};
+                (new CustomVideoCapture("Camera 4", 3, Videoio.CAP_DSHOW, 100)),
+                (new CustomVideoCapture("2-28", "Media/2-28.MP4", 20))};
 
-        cameraDropDown.addItem(cameras[0]);
-        cameraDropDown.addItem(cameras[1]);
-        cameraDropDown.addItem(cameras[2]);
-        cameraDropDown.addItem(cameras[3]);
-        cameraDropDown.addItem(cameras[4]);
-        cameraDropDown.addItem(cameras[5]);
+        for (int i = 0; i < cameras.length; i++) {
+            cameraDropDown.addItem(cameras[i]);
+
+        }
 
         cameraDropDown.setSelectedIndex(1);
         cameraDropDown.addActionListener(new cameraDropboxDropped());
@@ -267,12 +291,15 @@ currentColor = c;
             }
             ColorSelector.getInstance().setCamera(cam);
 
+
             int factor = cam.getZoom();
             int width = (int) cam.get(Videoio.CAP_PROP_FRAME_WIDTH);
             int height = (int) cam.get(Videoio.CAP_PROP_FRAME_HEIGHT);
 
 
             ColorSelector.getInstance().setSize(width*factor/100,height*factor/100);
+            //ColorSelector.getInstance().startVideo();
+
 
         }
     }
@@ -431,6 +458,4 @@ currentColor = c;
 
         return instance;
     }
-
-    //add main classes for lots of classes to do individual tests of features.
 }

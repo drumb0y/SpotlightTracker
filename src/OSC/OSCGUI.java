@@ -9,7 +9,9 @@ import javax.swing.event.ChangeListener;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class OSCGUI {
 
@@ -65,6 +67,9 @@ public class OSCGUI {
     private JSpinner zoomSpinner;
     private JSpinner panSpinner;
     private JSpinner tiltSpinner;
+    private JTextArea textArea1;
+    private JPanel TextBox;
+    private JTextField textField1;
 
 
     private void setupFrame() {
@@ -73,19 +78,20 @@ public class OSCGUI {
 
 
 
-
-
         JFrame frame = new JFrame("OSC GUI");
         frame.setContentPane(RootPane);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
+
+        ArrayList<Double> usernum = new ArrayList<>();
+        usernum.add(2.0);
+        sendMessageLoud("/eos/user", usernum);
     }
 
     JColorChooser colorChooser;
 
     private void setupPresetOSC() {
-
 
         colorChooser = new JColorChooser();
         colorChooser.getSelectionModel().addChangeListener(new colorSelectorListener(this));
@@ -108,6 +114,8 @@ public class OSCGUI {
         AddressPanel.setLayout(new GridLayout(20,1));
         ArgsPanel.setLayout(new GridLayout(20,1));
         InfoPanel.setLayout(new GridLayout(20,1));
+
+        textField1.addActionListener(new textBoxListener(this));
     }
 
     public static ArrayList<Double> stringToList(String s) {
@@ -282,6 +290,38 @@ class sendButtonListener implements ActionListener {
     }
 
 
+}
+
+class textBoxListener implements ActionListener {
+
+    OSCGUI gui;
+
+    public textBoxListener(OSCGUI g) {
+        gui = g;
+    }
+
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        JTextField area = (JTextField) e.getSource();
+        String s = area.getText();
+
+        Scanner stdin = new Scanner(s);
+
+        while (stdin.hasNextDouble()) {
+            ArrayList<Double> args = new ArrayList<>();
+            args.add(stdin.nextDouble());
+            args.add(stdin.nextDouble());
+
+            gui.sendMessageLoud("/eos/chan/250/param/pan/tilt", args);
+            try {
+                Thread.sleep(2000);
+            } catch (InterruptedException ex) {
+                throw new RuntimeException(ex);
+            }
+        }
+
+    }
 }
 
 class colorSelectorListener implements ChangeListener {

@@ -13,22 +13,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f0ce2048-32c3-4842-8545-ed04f75181c7" name="Changes" comment="worked on connecting the Computer vision and calculated positioning to the OSC Messages into an external device">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AidansPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AidansPoint.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CartisionToPolar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CartesianToPolar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ColorSelector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ColorSelector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Display.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Display.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/OSC/OSCGUI.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/OSC/OSCGUI.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/OSC/OSCGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/OSC/OSCGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/OSC/OSCReceiver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/OSC/OSCReceiver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/OSC/OSCSender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/OSC/OSCSender.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Options.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Options.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/OptionsTab.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/OptionsTab.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/OptionsTab.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/OptionsTab.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/aaaaaa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/aaaaaa.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/customOpencvObjects/CustomVideoCapture.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/customOpencvObjects/CustomVideoCapture.java" afterDir="false" />
+    <list default="true" id="f0ce2048-32c3-4842-8545-ed04f75181c7" name="Changes" comment="3/6 - Updated Code">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,6 +44,9 @@
       <filtered-out-file-type name="TAG" />
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
+  </component>
+  <component name="GithubDefaultAccount">
+    <option name="defaultAccountId" value="9be8d6ff-0739-496d-9588-c5eccfdf34d4" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -138,15 +127,19 @@
     "Repository.Attach.Sources": "false",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW": "true",
     "last_opened_file_path": "C:/Users/drumb/IdeaProjects/SpotlightTracker/Media",
     "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "editor.preferences.fonts.default"
+    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable"
   }
 }]]></component>
+  <component name="Push.Settings">
+    <force-push-targets>
+      <force-push-target remote-path="origin" branch="reworked" />
+    </force-push-targets>
+  </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="notNeeded" />
@@ -165,7 +158,7 @@
       <recent name="C:\Users\s612902\eclipse-workspace\spotlight\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main (1)">
+  <component name="RunManager" selected="Application.ColorSelector">
     <configuration name="ColorSelector" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ColorSelector" />
       <module name="spotlight" />
@@ -221,9 +214,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main (1)" />
-        <item itemvalue="Application.OSCGUI" />
         <item itemvalue="Application.ColorSelector" />
+        <item itemvalue="Application.OSCGUI" />
+        <item itemvalue="Application.Main (1)" />
         <item itemvalue="Application.OSCSender" />
         <item itemvalue="Application.OSCReceiver" />
       </list>
@@ -287,7 +280,35 @@
       <option name="project" value="LOCAL" />
       <updated>1672816671699</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="got program working and now need to work on math and improve it, but the basic program is there.&#10;&#10;1/18/23">
+      <created>1674065099879</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1674065099879</updated>
+    </task>
+    <task id="LOCAL-00009" summary="3/6 - Updated Code">
+      <created>1678125240404</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1678125240404</updated>
+    </task>
+    <task id="LOCAL-00010" summary="3/6 - Updated Code">
+      <created>1678126013162</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1678126013162</updated>
+    </task>
+    <task id="LOCAL-00011" summary="3/6 - Updated Code">
+      <created>1678126591205</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1678126591205</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -312,7 +333,9 @@
     <MESSAGE value="Added the ability to resize the output and made the color selection process more sensitive." />
     <MESSAGE value="worked on OSC Communication" />
     <MESSAGE value="worked on connecting the Computer vision and calculated positioning to the OSC Messages into an external device" />
-    <option name="LAST_COMMIT_MESSAGE" value="worked on connecting the Computer vision and calculated positioning to the OSC Messages into an external device" />
+    <MESSAGE value="got program working and now need to work on math and improve it, but the basic program is there.&#10;&#10;1/18/23" />
+    <MESSAGE value="3/6 - Updated Code" />
+    <option name="LAST_COMMIT_MESSAGE" value="3/6 - Updated Code" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -339,12 +362,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/ColorSelector.java</url>
-          <line>147</line>
+          <line>165</line>
           <option name="timeStamp" value="10" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/OptionsTab.java</url>
-          <line>208</line>
+          <line>232</line>
           <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -354,8 +377,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/OSC/OSCGUI.java</url>
-          <line>143</line>
+          <line>151</line>
           <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/OptionsTab.java</url>
+          <line>82</line>
+          <option name="timeStamp" value="16" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

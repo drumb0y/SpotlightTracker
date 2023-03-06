@@ -103,12 +103,17 @@ public class ColorSelector implements Id {
 
 
         System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
-        String path = "Media/How the Endocrine System Works.mp4";
+        //String path = "Media/How the Endocrine System Works.mp4";
 
-        camera = new CustomVideoCapture("endocrine",path, 60);
+
+
+        //camera = new CustomVideoCapture("endocrine",path, 60);
         //Options options = new Options();
 
-        //camera = new VideoCapture(0,Videoio.CAP_DSHOW);
+        camera = new CustomVideoCapture("Front Camera", 0,Videoio.CAP_DSHOW, 60);
+
+        width = (int) camera.get(Videoio.CAP_PROP_FRAME_WIDTH);
+        height = (int) camera.get(Videoio.CAP_PROP_FRAME_HEIGHT);
 
         startVideo();
 
@@ -140,12 +145,25 @@ public class ColorSelector implements Id {
     public void startVideo() {
 
 
+        System.out.println("startVideo");
 
+        camera.set(Videoio.CAP_PROP_POS_FRAMES, 0);
+
+//        int factor = camera.getZoom();
+//        int width = (int) camera.get(Videoio.CAP_PROP_FRAME_WIDTH);
+//        int height = (int) camera.get(Videoio.CAP_PROP_FRAME_HEIGHT);
+//
+//        setSize(width*factor/100,height*factor/100);
         long count = (long) camera.get(Videoio.CAP_PROP_FRAME_COUNT);
-        width = (int) camera.get(Videoio.CAP_PROP_FRAME_WIDTH);
-        height = (int) camera.get(Videoio.CAP_PROP_FRAME_HEIGHT);
 
-        //System.out.println("made it to while loop");
+
+        onlyBlueimage = new Mat();
+        onlyGreenimage = new Mat();
+        onlyRedimage = new Mat();
+
+
+
+        System.out.println("made it to while loop");
         while (camera.read(originalImage)) {
             Imgproc.resize(originalImage, originalImage, new Size(width,height));
             //Thread.sleep((long) (((double) 1/6)*100));
@@ -191,8 +209,7 @@ public class ColorSelector implements Id {
 
         System.out.println("this is the end count: " + count);
 
-            //startVideo();
-            //todo make it so it doesn't crash when a video ends
+            startVideo();
 
 
     }
@@ -395,7 +412,7 @@ public class ColorSelector implements Id {
         Imgproc.findContours(thresh, contours, hierarchy, Imgproc.RETR_CCOMP, Imgproc.CHAIN_APPROX_SIMPLE);
 
         double MaxSize = 0; //size of largest pixels
-        int MaxIndex = 0; //where is the group of largest pixels
+        int MaxIndex = 0; //where is the group of the largest pixels
 
         for (int i = 0; i < contours.size(); i++) { //got through each group of pixels and find the largest one (probely the cup/wanted object)
             if (Imgproc.contourArea(contours.get(i)) > MaxSize) {

@@ -6,7 +6,7 @@ public class CartesianToPolar {
     public static double Ry = 5.3;
 
     public static double[] convert(int x, int y) {
-        double T = Math.sqrt( ( Math.pow( (x-355)/Rx,2) + Math.pow( ((-y)+389)/Ry,2))/2);
+        double T = Math.sqrt( ( Math.pow( (x-355)/Rx,2) + Math.pow( ((y)-389)/Ry,2))/2);
 
         double P;
 
@@ -16,10 +16,10 @@ public class CartesianToPolar {
         }
         else P = Math.acos( ( (x-355)/Rx)/T) * (180/Math.PI);
 
-        System.out.println("T: " + T + " P: " + P);
+        //System.out.println("T: " + T + " P: " + P);
 
 
-        return new double[]{T,P+90};
+        return new double[]{T,P-90};
 
     }
 
