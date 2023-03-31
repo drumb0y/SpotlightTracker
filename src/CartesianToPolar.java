@@ -1,12 +1,12 @@
 public class CartesianToPolar {
 
-    public static int XOffset = 0;
-    public static int YOffset = 0;
+    public static int XOffset = 300;
+    public static int YOffset = 330;
     public static double Rx = 9.4;
     public static double Ry = 5.3;
 
     public static double[] convert(int x, int y) {
-        double T = Math.sqrt( ( Math.pow( (x-355)/Rx,2) + Math.pow( ((y)-389)/Ry,2))/2);
+        double T = Math.sqrt( ( Math.pow( (x-XOffset)/Rx,2) + Math.pow( ((y)-YOffset)/Ry,2))/2);
 
         double P;
 
@@ -14,12 +14,12 @@ public class CartesianToPolar {
             System.out.println("T is 0");
             P = 0;
         }
-        else P = Math.acos( ( (x-355)/Rx)/T) * (180/Math.PI);
+        else P = Math.acos( ( (x-XOffset)/Rx)/T) * (180/Math.PI);
 
         //System.out.println("T: " + T + " P: " + P);
 
 
-        return new double[]{T,P-90};
+        return new double[]{T,-(P-90)};
 
     }
 

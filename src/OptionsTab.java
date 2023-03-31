@@ -98,7 +98,7 @@ public class OptionsTab {
                 (new CustomVideoCapture("How the Endocrine System Works", path, 60)),
                 (new CustomVideoCapture("Front Camera",0, Videoio.CAP_DSHOW, 84)),
                 (new CustomVideoCapture("ColorTest", "Media/colorTest.mp4", 40 )),
-                (new CustomVideoCapture("external camera", 1, Videoio.CAP_DSHOW, 40)),
+                (new CustomVideoCapture("external camera", 1, Videoio.CAP_DSHOW, 84)),
                 (new CustomVideoCapture("Thespian at work", "Media/2023-01-02 15-40-24.mp4", 40)),
                 (new CustomVideoCapture("test 1-14", "Media/20230115_070059_0003.MP4", 20)),
                 (new CustomVideoCapture("Camera 4", 3, Videoio.CAP_DSHOW, 100)),
